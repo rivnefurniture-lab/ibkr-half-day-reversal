@@ -107,7 +107,10 @@ async def download_logs() -> FileResponse:
 
 @app.get("/")
 async def index() -> FileResponse:
-    return FileResponse(RESOURCE_ROOT / "static" / "index.html")
+    return FileResponse(
+        RESOURCE_ROOT / "static" / "index.html",
+        headers={"Cache-Control": "no-store, max-age=0"},
+    )
 
 
 app.mount("/static", StaticFiles(directory=RESOURCE_ROOT / "static"), name="static")

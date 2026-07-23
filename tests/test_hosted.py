@@ -21,3 +21,15 @@ async def test_hosted_health_and_auth(monkeypatch) -> None:
 
     assert response.status_code == 503
     assert "connector is offline" in response.json()["detail"]
+
+
+@pytest.mark.asyncio
+async def test_hosted_dashboard_disables_stale_asset_caching() -> None:
+    transport = httpx.ASGITransport(app=app)
+    async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
+        response = await client.get("/")
+
+    assert response.status_code == 200
+    assert response.headers["cache-control"] == "no-store, max-age=0"
+    assert '/static/styles.css?v=1.2.1' in response.text
+    assert '/static/app.js?v=1.2.1' in response.text

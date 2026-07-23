@@ -144,7 +144,10 @@ def _require_browser_token(request: Request) -> None:
 
 @app.get("/")
 async def index() -> FileResponse:
-    return FileResponse(PROJECT_ROOT / "static" / "index.html")
+    return FileResponse(
+        PROJECT_ROOT / "static" / "index.html",
+        headers={"Cache-Control": "no-store, max-age=0"},
+    )
 
 
 @app.exception_handler(HTTPException)
