@@ -1,5 +1,7 @@
 # Half-Day Reversal Control
 
+Private releases: <https://github.com/rivnefurniture-lab/ibkr-half-day-reversal/releases/latest>
+
 A local browser dashboard that scans a configurable US-stock universe, ranks open-to-current
 returns, buys the worst-performing decile with IBKR Market-on-Close orders, and queues
 Market-on-Open sells after the closing fills arrive.

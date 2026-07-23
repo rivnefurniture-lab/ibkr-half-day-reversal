@@ -8,7 +8,10 @@ socket is kept on `127.0.0.1` and is never exposed to the public internet.
 
 1. Install the latest stable **IBKR Trader Workstation**.
 2. Install **uv** from <https://docs.astral.sh/uv/getting-started/installation/>.
-3. Download and unzip the latest Half-Day Reversal release.
+3. Download and unzip the latest Half-Day Reversal release from
+   <https://github.com/rivnefurniture-lab/ibkr-half-day-reversal/releases/latest>.
+   The repository is private, so Andrii must invite your GitHub username first or send you the
+   release ZIP directly.
 
 ## 2. Configure TWS paper trading
 
