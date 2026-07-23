@@ -1,5 +1,5 @@
 const $ = (selector) => document.querySelector(selector);
-const state = { snapshot: null, busy: false, backtestBusy: false, toastTimer: null };
+const state = { snapshot: null, busy: false, backtestBusy: false, hosted: false, toastTimer: null };
 
 const elements = {
   modeBadge: $("#modeBadge"), connectionBadge: $("#connectionBadge"), primaryStatus: $("#primaryStatus"),
@@ -17,16 +17,31 @@ const elements = {
   loadMidcaps: $("#loadMidcaps"),
   runBacktest: $("#runBacktest"), backtestStatus: $("#backtestStatus"),
   backtestResults: $("#backtestResults"), backtestTradesBody: $("#backtestTradesBody"),
+  hostedBadge: $("#hostedBadge"), accessDialog: $("#accessDialog"), accessForm: $("#accessForm"),
+  downloadLogs: $("#downloadLogs"),
 };
 
 async function api(path, options = {}) {
+  const accessKey = state.hosted ? localStorage.getItem("halfdayAccessKey") : "";
   const response = await fetch(path, {
-    headers: { "Content-Type": "application/json", ...(options.headers || {}) },
+    headers: {
+      "Content-Type": "application/json",
+      ...(accessKey ? { Authorization: `Bearer ${accessKey}` } : {}),
+      ...(options.headers || {}),
+    },
     ...options,
   });
   const payload = await response.json().catch(() => ({}));
+  if (response.status === 401 && state.hosted) showAccessDialog(payload.detail);
   if (!response.ok) throw new Error(payload.detail || `Request failed (${response.status})`);
   return payload;
+}
+
+function showAccessDialog(message = "") {
+  $("#accessError").textContent = message;
+  $("#accessError").classList.toggle("hidden", !message);
+  $("#accessKey").value = localStorage.getItem("halfdayAccessKey") || "";
+  if (!elements.accessDialog.open) elements.accessDialog.showModal();
 }
 
 function formatMoney(value) {
@@ -194,7 +209,23 @@ function showToast(message, isError = false) {
 }
 
 async function refresh() {
+  if (state.hosted && !localStorage.getItem("halfdayAccessKey")) return;
   try { render(await api("/api/status")); } catch (error) { showToast(`Dashboard connection lost: ${error.message}`, true); }
+}
+
+async function initialize() {
+  try {
+    const response = await fetch("/host/config");
+    if (response.ok) {
+      state.hosted = true;
+      elements.hostedBadge.classList.remove("hidden");
+      if (!localStorage.getItem("halfdayAccessKey")) {
+        showAccessDialog();
+        return;
+      }
+    }
+  } catch (_) {}
+  await refresh();
 }
 
 elements.connectButton.addEventListener("click", () => withBusy(() => api(state.snapshot.connected ? "/api/disconnect" : "/api/connect", { method: "POST" }), state.snapshot.connected ? "Disconnected" : "IBKR connected"));
@@ -208,6 +239,45 @@ elements.settingsForm.addEventListener("submit", async (event) => { event.preven
 elements.armButton.addEventListener("click", () => { const mode = state.snapshot.mode; const phrase = mode === "live" ? "LIVE" : mode === "paper" ? "PAPER" : "DRY RUN"; $("#armTitle").textContent = `Arm ${mode.replace("_", " ")} execution`; $("#armMessage").textContent = `Type ${phrase} to allow one strategy run for this session.`; $("#armPhrase").value = ""; elements.armDialog.showModal(); $("#armPhrase").focus(); });
 $("#cancelArm").addEventListener("click", () => elements.armDialog.close());
 elements.armForm.addEventListener("submit", async (event) => { event.preventDefault(); try { await withBusy(() => api("/api/arm", { method: "POST", body: JSON.stringify({ phrase: $("#armPhrase").value }) }), "Execution armed", true); elements.armDialog.close(); } catch (_) {} });
+
+elements.accessForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const key = $("#accessKey").value.trim();
+  if (key.length < 32) {
+    showAccessDialog("The access key must contain at least 32 characters");
+    return;
+  }
+  localStorage.setItem("halfdayAccessKey", key);
+  elements.accessDialog.close();
+  await refresh();
+});
+
+elements.downloadLogs.addEventListener("click", async () => {
+  try {
+    const accessKey = state.hosted ? localStorage.getItem("halfdayAccessKey") : "";
+    const response = await fetch("/api/logs/download", {
+      headers: accessKey ? { Authorization: `Bearer ${accessKey}` } : {},
+    });
+    if (response.status === 401 && state.hosted) showAccessDialog("Enter the hosted dashboard access key");
+    if (!response.ok) {
+      const payload = await response.json().catch(() => ({}));
+      throw new Error(payload.detail || `Log download failed (${response.status})`);
+    }
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    const disposition = response.headers.get("content-disposition") || "";
+    const filename = disposition.match(/filename="?([^";]+)"?/i)?.[1] || "half-day-reversal.log";
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  } catch (error) {
+    showToast(error.message, true);
+  }
+});
 
 elements.estimateBacktest.addEventListener("click", async () => {
   setBacktestBusy(true);
@@ -273,5 +343,5 @@ start.setDate(today.getDate() - 30);
 $("#backtestEnd").value = today.toISOString().slice(0, 10);
 $("#backtestStart").value = start.toISOString().slice(0, 10);
 
-refresh();
+initialize();
 setInterval(refresh, 3000);

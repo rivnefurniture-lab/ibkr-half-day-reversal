@@ -606,15 +606,16 @@ dependencies = [
     { name = "databento" },
     { name = "exchange-calendars" },
     { name = "fastapi" },
+    { name = "httpx" },
     { name = "ib-async" },
     { name = "pydantic" },
     { name = "python-dotenv" },
     { name = "uvicorn", extra = ["standard"] },
+    { name = "websockets" },
 ]
 
 [package.optional-dependencies]
 dev = [
-    { name = "httpx" },
     { name = "pytest" },
     { name = "pytest-asyncio" },
     { name = "ruff" },
@@ -625,7 +626,7 @@ requires-dist = [
     { name = "databento", specifier = ">=0.66" },
     { name = "exchange-calendars", specifier = ">=4.8" },
     { name = "fastapi", specifier = ">=0.116" },
-    { name = "httpx", marker = "extra == 'dev'", specifier = ">=0.28" },
+    { name = "httpx", specifier = ">=0.28" },
     { name = "ib-async", specifier = ">=2.0.1" },
     { name = "pydantic", specifier = ">=2.11" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.4" },
@@ -633,6 +634,7 @@ requires-dist = [
     { name = "python-dotenv", specifier = ">=1.1" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.12" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.35" },
+    { name = "websockets", specifier = ">=15" },
 ]
 provides-extras = ["dev"]
 

@@ -7,15 +7,16 @@ dependencies = [
   "databento>=0.66",
   "exchange-calendars>=4.8",
   "fastapi>=0.116",
+  "httpx>=0.28",
   "ib-async>=2.0.1",
   "pydantic>=2.11",
   "python-dotenv>=1.1",
   "uvicorn[standard]>=0.35",
+  "websockets>=15",
 ]
 
 [project.optional-dependencies]
 dev = [
-  "httpx>=0.28",
   "pytest>=8.4",
   "pytest-asyncio>=1.0",
   "ruff>=0.12",

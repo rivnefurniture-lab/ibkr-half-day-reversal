@@ -14,3 +14,11 @@
   package target, so the project itself was not installed into the uv environment.
 - **Fix:** Configure Hatchling with `halfreversal` as the wheel package, then run
   `uv sync --extra dev` again.
+
+## Connector access key appears in WebSocket request logs
+
+- **Error:** The hosted server logs include the connector access key in the `/bridge/ws` request URL.
+- **Cause:** WebSocket authentication was initially passed as a query parameter, which access logs
+  record by default.
+- **Fix:** Send the key in the WebSocket `Authorization: Bearer` header, validate that header in the
+  relay, and rotate any key used before this fix.

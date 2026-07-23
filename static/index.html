@@ -15,6 +15,7 @@
           <span><b>Half-Day</b><small>Reversal Control</small></span>
         </a>
         <div class="topbar-status">
+          <span id="hostedBadge" class="badge neutral hidden">Hosted</span>
           <span id="modeBadge" class="badge neutral">Dry run</span>
           <span id="connectionBadge" class="badge"><i></i> Disconnected</span>
           <button id="settingsButton" class="icon-button" aria-label="Open settings">⚙</button>
@@ -140,7 +141,7 @@
         </section>
 
         <section class="panel log-panel">
-          <div class="section-header"><div><p class="eyebrow">Live journal</p><h2>What the app is doing</h2></div><a class="text-button" href="/api/logs/download">Download log</a></div>
+          <div class="section-header"><div><p class="eyebrow">Live journal</p><h2>What the app is doing</h2></div><button id="downloadLogs" class="text-button" type="button">Download log</button></div>
           <div id="logs" class="logs"><div class="log-row"><time>—</time><span class="log-level info">INFO</span><p>Waiting for the app…</p></div></div>
         </section>
       </main>
@@ -177,6 +178,16 @@
         <p id="armMessage" class="muted">Type PAPER to allow orders for today.</p>
         <input id="armPhrase" autocomplete="off" spellcheck="false" />
         <div class="dialog-actions"><button type="button" id="cancelArm" class="button secondary">Cancel</button><button type="submit" class="button warning">Arm session</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="accessDialog" class="confirm-dialog">
+      <form id="accessForm" method="dialog">
+        <p class="eyebrow">Hosted dashboard</p><h2>Enter Scott’s access key</h2>
+        <p class="muted">This key securely links the hosted UI to the connector running beside TWS.</p>
+        <input id="accessKey" type="password" autocomplete="current-password" spellcheck="false" />
+        <div id="accessError" class="form-error hidden"></div>
+        <div class="dialog-actions"><button type="submit" class="button primary">Open dashboard</button></div>
       </form>
     </dialog>
 
