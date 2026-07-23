@@ -4,6 +4,7 @@ import asyncio
 import base64
 import json
 import os
+from collections.abc import Callable
 from contextlib import suppress
 from pathlib import Path
 from typing import Any
@@ -15,7 +16,8 @@ from websockets.asyncio.client import connect
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-load_dotenv(PROJECT_ROOT / ".env")
+load_dotenv(Path(os.getenv("HALFREVERSAL_ENV_FILE", PROJECT_ROOT / ".env")))
+StatusCallback = Callable[[str, bool], None]
 
 
 def websocket_url(hosted_url: str) -> str:
@@ -24,7 +26,7 @@ def websocket_url(hosted_url: str) -> str:
     return urlunsplit((scheme, parts.netloc, "/bridge/ws", "", ""))
 
 
-async def run_connector() -> None:
+async def run_connector(status_callback: StatusCallback | None = None) -> None:
     hosted_url = os.getenv("HOSTED_DASHBOARD_URL", "").strip()
     token = os.getenv("BRIDGE_TOKEN", "").strip()
     local_url = os.getenv("LOCAL_DASHBOARD_URL", "http://127.0.0.1:8765").rstrip("/")
@@ -44,7 +46,10 @@ async def run_connector() -> None:
                 ping_timeout=20,
                 max_size=20 * 1024 * 1024,
             ) as websocket:
-                print("Hosted dashboard connector is online.")
+                message = "Hosted dashboard connector is online."
+                print(message)
+                if status_callback:
+                    status_callback(message, True)
                 retry_seconds = 1
                 send_lock = asyncio.Lock()
                 async with httpx.AsyncClient(timeout=360) as client:
@@ -67,7 +72,10 @@ async def run_connector() -> None:
         except asyncio.CancelledError:
             raise
         except Exception as exc:
-            print(f"Connector offline: {exc}. Retrying in {retry_seconds}s.")
+            message = f"Connector offline. Retrying in {retry_seconds}s."
+            print(f"{message} ({exc})")
+            if status_callback:
+                status_callback(message, False)
             await asyncio.sleep(retry_seconds)
             retry_seconds = min(retry_seconds * 2, 15)
 

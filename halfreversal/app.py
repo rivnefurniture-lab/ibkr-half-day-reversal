@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import os
+import sys
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -19,9 +21,11 @@ from .models import (
 )
 from .service import TradingService
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-load_dotenv(PROJECT_ROOT / ".env")
-service = TradingService(PROJECT_ROOT)
+RESOURCE_ROOT = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent.parent))
+ENV_FILE = Path(os.getenv("HALFREVERSAL_ENV_FILE", RESOURCE_ROOT / ".env"))
+DATA_DIR = Path(os.getenv("HALFREVERSAL_DATA_DIR", RESOURCE_ROOT / "data"))
+load_dotenv(ENV_FILE)
+service = TradingService(RESOURCE_ROOT, data_dir=DATA_DIR)
 
 
 @asynccontextmanager
@@ -31,7 +35,7 @@ async def lifespan(_: FastAPI):
     await service.stop()
 
 
-app = FastAPI(title="Half-Day Reversal Control", version="0.1.0", lifespan=lifespan)
+app = FastAPI(title="Half-Day Reversal Control", version="1.2.0", lifespan=lifespan)
 
 
 class ArmRequest(BaseModel):
@@ -103,10 +107,10 @@ async def download_logs() -> FileResponse:
 
 @app.get("/")
 async def index() -> FileResponse:
-    return FileResponse(PROJECT_ROOT / "static" / "index.html")
+    return FileResponse(RESOURCE_ROOT / "static" / "index.html")
 
 
-app.mount("/static", StaticFiles(directory=PROJECT_ROOT / "static"), name="static")
+app.mount("/static", StaticFiles(directory=RESOURCE_ROOT / "static"), name="static")
 
 
 async def _handle(awaitable):

@@ -1,5 +1,5 @@
 const $ = (selector) => document.querySelector(selector);
-const state = { snapshot: null, busy: false, backtestBusy: false, hosted: false, toastTimer: null };
+const state = { snapshot: null, busy: false, backtestBusy: false, hosted: false, connectorOnline: true, toastTimer: null };
 
 const elements = {
   modeBadge: $("#modeBadge"), connectionBadge: $("#connectionBadge"), primaryStatus: $("#primaryStatus"),
@@ -44,6 +44,15 @@ function showAccessDialog(message = "") {
   if (!elements.accessDialog.open) elements.accessDialog.showModal();
 }
 
+function consumePairedAccessKey() {
+  const parameters = new URLSearchParams(window.location.hash.slice(1));
+  const key = parameters.get("access") || "";
+  if (key.length >= 32) {
+    localStorage.setItem("halfdayAccessKey", key);
+    history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+  }
+}
+
 function formatMoney(value) {
   if (!value) return "—";
   return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(value);
@@ -61,6 +70,7 @@ function escapeHtml(value) {
 
 function render(snapshot) {
   state.snapshot = snapshot;
+  state.connectorOnline = true;
   const modeLabels = { dry_run: "Dry run", paper: "IBKR paper", live: "IBKR live" };
   elements.modeBadge.textContent = modeLabels[snapshot.mode];
   elements.modeBadge.className = `badge neutral ${snapshot.mode === "live" ? "live" : ""}`;
@@ -71,6 +81,11 @@ function render(snapshot) {
   elements.armButton.disabled = !snapshot.connected || state.busy;
   elements.executeButton.disabled = !snapshot.connected || !snapshot.armed || state.busy;
   elements.cancelButton.disabled = !snapshot.connected || state.busy;
+  $("#settingsButton").disabled = false;
+  elements.loadMidcaps.disabled = state.backtestBusy;
+  elements.estimateBacktest.disabled = state.backtestBusy;
+  elements.runBacktest.disabled = state.backtestBusy || !elements.runBacktest.dataset.estimated;
+  elements.downloadLogs.disabled = false;
 
   if (!snapshot.connected) {
     elements.primaryStatus.textContent = "Safe and standing by";
@@ -98,6 +113,29 @@ function render(snapshot) {
   renderOrders(snapshot.orders);
   renderPositions(snapshot.account.positions);
   renderLogs(snapshot.logs);
+}
+
+function renderConnectorOffline() {
+  state.snapshot = null;
+  state.connectorOnline = false;
+  elements.connectionBadge.className = "badge";
+  elements.connectionBadge.innerHTML = "<i></i>Connector offline";
+  elements.primaryStatus.textContent = "Start the desktop connector";
+  elements.statusDetail.textContent = "Open the Half-Day Reversal Connector on the same computer as TWS. This page will reconnect automatically.";
+  elements.connectButton.disabled = true;
+  elements.scanButton.disabled = true;
+  elements.armButton.disabled = true;
+  elements.executeButton.disabled = true;
+  elements.cancelButton.disabled = true;
+  $("#settingsButton").disabled = true;
+  elements.loadMidcaps.disabled = true;
+  elements.estimateBacktest.disabled = true;
+  elements.runBacktest.disabled = true;
+  elements.downloadLogs.disabled = true;
+  elements.armDot.className = "status-dot";
+  elements.armLabel.textContent = "Waiting for desktop connector";
+  elements.nextRun.textContent = "—";
+  elements.marketStatus.textContent = "Unavailable";
 }
 
 function renderRankings(rows, lastScanAt, universeSize) {
@@ -210,10 +248,26 @@ function showToast(message, isError = false) {
 
 async function refresh() {
   if (state.hosted && !localStorage.getItem("halfdayAccessKey")) return;
+  if (state.hosted) {
+    try {
+      const hostResponse = await fetch("/host/config");
+      if (hostResponse.ok) {
+        const host = await hostResponse.json();
+        if (!host.worker_connected) {
+          renderConnectorOffline();
+          return;
+        }
+      }
+    } catch (_) {
+      renderConnectorOffline();
+      return;
+    }
+  }
   try { render(await api("/api/status")); } catch (error) { showToast(`Dashboard connection lost: ${error.message}`, true); }
 }
 
 async function initialize() {
+  consumePairedAccessKey();
   try {
     const response = await fetch("/host/config");
     if (response.ok) {
@@ -228,11 +282,18 @@ async function initialize() {
   await refresh();
 }
 
-elements.connectButton.addEventListener("click", () => withBusy(() => api(state.snapshot.connected ? "/api/disconnect" : "/api/connect", { method: "POST" }), state.snapshot.connected ? "Disconnected" : "IBKR connected"));
+elements.connectButton.addEventListener("click", () => {
+  if (!state.snapshot) return;
+  withBusy(() => api(state.snapshot.connected ? "/api/disconnect" : "/api/connect", { method: "POST" }), state.snapshot.connected ? "Disconnected" : "IBKR connected");
+});
 elements.scanButton.addEventListener("click", () => withBusy(() => api("/api/scan?execute=false", { method: "POST" }), "Preview scan complete"));
 elements.executeButton.addEventListener("click", () => withBusy(() => api("/api/scan?execute=true", { method: "POST" }), "Execution run submitted"));
 elements.cancelButton.addEventListener("click", async () => { if (confirm("Cancel all still-open MOC entry orders created by this strategy? Existing MOO exits will remain protected.")) await withBusy(() => api("/api/cancel", { method: "POST" }), "Entry cancellation requested"); });
-$("#settingsButton").addEventListener("click", () => { populateSettings(state.snapshot.config); elements.settingsDialog.showModal(); });
+$("#settingsButton").addEventListener("click", () => {
+  if (!state.snapshot) return;
+  populateSettings(state.snapshot.config);
+  elements.settingsDialog.showModal();
+});
 $("#closeSettings").addEventListener("click", () => elements.settingsDialog.close());
 $("#resetSettings").addEventListener("click", () => elements.settingsDialog.close());
 elements.settingsForm.addEventListener("submit", async (event) => { event.preventDefault(); try { await withBusy(() => api("/api/config", { method: "PUT", body: JSON.stringify(configFromForm()) }), "Settings saved", true); elements.settingsDialog.close(); } catch (error) { $("#settingsError").textContent = error.message; $("#settingsError").classList.remove("hidden"); } });

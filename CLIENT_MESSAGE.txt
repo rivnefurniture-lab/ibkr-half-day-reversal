@@ -1,13 +1,9 @@
 Hi Scott,
 
-It’s now hosted here: https://half-day-reversal-production.up.railway.app
+I’ve simplified it to a normal one-click desktop app. Download the Windows installer or Mac DMG,
+install it, and enter the dashboard and Databento keys once. It then starts the secure connector
+automatically and opens the hosted dashboard already signed in.
 
-The dashboard handles the scan, Databento backtests, IBKR connection, orders and logs. TWS stays
-local and secure; the small connector only opens an outbound link, so no IBKR port is exposed.
-
-Install TWS and uv once, download the public release, add the access key and Databento key to
-`.env`, then run `connect-hosted.command` on Mac or `connect-hosted.bat` on Windows. After that,
-everything is done in the hosted UI or TWS.
-
-Please test one paper MOC/MOO cycle on account DUH450551 at 1% / one position before moving live.
-The full step-by-step guide is included.
+No Python, terminal, scripts or config files. After the first setup, you only use TWS and the
+dashboard. Please start with paper account DUH450551 at 1% / one position and verify one full
+MOC/MOO cycle before enabling live mode.

@@ -33,8 +33,8 @@ FINAL_ORDER_STATUSES = {"Filled", "Cancelled", "ApiCancelled", "Inactive"}
 
 
 class TradingService:
-    def __init__(self, project_root: Path) -> None:
-        self.state = RuntimeState(project_root / "data")
+    def __init__(self, project_root: Path, data_dir: Path | None = None) -> None:
+        self.state = RuntimeState(data_dir or project_root / "data")
         self.broker = IBKRBroker(self.state.log)
         self.engine = StrategyEngine(self.broker)
         self.backtester = DatabentoBacktester(self.state.log)

@@ -31,17 +31,21 @@ transmits them.
 
 ## Quick start
 
-1. Download and unzip the latest public release.
-2. Install `uv` from <https://docs.astral.sh/uv/getting-started/installation/>.
-3. In TWS Paper Trading, enable socket clients on port `7497`, disable Read-Only API, and allow
+1. Download the correct one-click installer from the latest public release:
+   - `Half-Day-Reversal-Setup-Windows.exe` for Windows;
+   - the `arm64.dmg` for Apple Silicon Macs;
+   - the `x86_64.dmg` for Intel Macs.
+2. Install and open **Half-Day Reversal Connector**.
+3. Enter the dashboard access key and Databento key in the one-time setup window. Leave live mode
+   locked during paper testing.
+4. In TWS Paper Trading, enable socket clients on port `7497`, disable Read-Only API, and allow
    localhost.
-4. Copy `.env.example` to `.env`. Add the private `BRIDGE_TOKEN` supplied by Andrii and Scott’s
-   Databento key.
-5. Double-click `connect-hosted.command` on macOS or `connect-hosted.bat` on Windows.
-6. The Railway dashboard opens automatically. Enter the same access key, then connect IBKR and
-   run a preview.
+5. The dashboard opens already authenticated. Select **IBKR paper**, connect account `DUH450551`,
+   and run a preview.
 
-Keep TWS and the connector window open while scanning, monitoring fills, or running automatically.
+No Python, `uv`, terminal, `.env`, or script editing is required. The connector can start
+automatically with the computer. Keep TWS open while scanning, monitoring fills, or running
+automatically.
 See [SCOTT_SETUP.md](SCOTT_SETUP.md) for the complete paper-to-live handoff.
 
 ## Strategy defaults
@@ -69,11 +73,12 @@ instead of trading on delayed or missing quotes.
 
 Paper-test the complete MOC/MOO cycle first. Live mode has two independent locks:
 
-1. Add `IBKR_LIVE_UNLOCK=YES_I_UNDERSTAND` to the local `.env`.
-2. Restart the connector, select **IBKR live**, connect to the live TWS session, and type `LIVE`
-   to arm that trading session.
+1. Open **Change keys** in the desktop connector, enable **Unlock IBKR live mode**, save, and
+   reopen the connector.
+2. Select **IBKR live** in the dashboard, connect to the live TWS session, and type `LIVE` to arm
+   that trading session.
 
-Removing that environment value locks live mode again. IBKR credentials are never stored by the
+Turning the desktop checkbox off locks live mode again. IBKR credentials are never stored by the
 app; authentication remains in TWS.
 
 ## Verification
