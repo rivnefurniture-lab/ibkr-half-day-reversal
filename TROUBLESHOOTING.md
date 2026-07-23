@@ -44,3 +44,13 @@
   entrypoint as a script and did not collect the dynamically loaded application modules.
 - **Fix:** Use absolute `halfreversal.*` imports and explicitly collect the package submodules in
   the PyInstaller specification.
+
+## macOS blocks the connector on first launch
+
+- **Error:** macOS says Apple cannot verify that Half-Day Reversal Connector is free of malicious
+  software and offers only a Done button.
+- **Cause:** The app is ad-hoc signed but cannot be notarized without an Apple Developer ID
+  certificate.
+- **Fix:** After the blocked launch, open **System Settings -> Privacy & Security**, click
+  **Open Anyway** under Security, and confirm. The hosted dashboard links directly to that settings
+  screen. For warning-free distribution, rebuild and notarize with a Developer ID certificate.

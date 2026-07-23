@@ -15,8 +15,15 @@ Download the latest release:
   Applications.
 - **Intel Mac:** open `Half-Day-Reversal-macOS-x86_64.dmg`, then drag the app to Applications.
 
-On a Mac, right-click the app and choose **Open** on its first launch if macOS asks for
-confirmation.
+On a Mac, Apple may block the first launch because this build is not notarized:
+
+1. Try to open the connector once, then close Apple's warning.
+2. Open **System Settings -> Privacy & Security**.
+3. Scroll to **Security**, click **Open Anyway**, and confirm.
+
+The dashboard's **Mac blocked the app?** button opens this screen directly. This exception is
+needed only once. Apple's instructions:
+<https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unknown-developer-mh40616/mac>
 
 ## 2. Complete the one-time screen
 

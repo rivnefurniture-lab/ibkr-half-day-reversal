@@ -18,7 +18,7 @@ const elements = {
   runBacktest: $("#runBacktest"), backtestStatus: $("#backtestStatus"),
   backtestResults: $("#backtestResults"), backtestTradesBody: $("#backtestTradesBody"),
   hostedBadge: $("#hostedBadge"), accessDialog: $("#accessDialog"), accessForm: $("#accessForm"),
-  downloadLogs: $("#downloadLogs"),
+  downloadLogs: $("#downloadLogs"), macHelpDialog: $("#macHelpDialog"),
 };
 
 async function api(path, options = {}) {
@@ -311,6 +311,20 @@ elements.accessForm.addEventListener("submit", async (event) => {
   localStorage.setItem("halfdayAccessKey", key);
   elements.accessDialog.close();
   await refresh();
+});
+
+$("#macHelpButton").addEventListener("click", () => {
+  if (!elements.macHelpDialog.open) elements.macHelpDialog.showModal();
+});
+
+document.querySelectorAll(".mac-download").forEach((download) => {
+  download.addEventListener("click", () => {
+    window.setTimeout(() => {
+      if (!elements.macHelpDialog.open && !elements.accessDialog.open) {
+        elements.macHelpDialog.showModal();
+      }
+    }, 1200);
+  });
 });
 
 elements.downloadLogs.addEventListener("click", async () => {

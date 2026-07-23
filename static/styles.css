@@ -78,6 +78,12 @@ h3 { margin-bottom: 5px; }
 .download-card small { margin-top: 2px; color: var(--muted); font-size: 10px; }
 .download-card.primary-download small { color: #334018; }
 .download-card i { font-style: normal; font-size: 20px; font-weight: 900; }
+.mac-help-button { grid-column: 1 / -1; display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 11px; min-height: 58px; padding: 10px 14px; color: #dfe7ee; background: #10151a; border: 1px dashed #46515d; border-radius: 12px; text-align: left; transition: .16s ease; }
+.mac-help-button:hover { color: var(--text); background: #171d22; border-color: var(--blue); }
+.mac-help-button > span:first-child { display: grid; place-items: center; width: 34px; height: 34px; color: var(--text); background: #252c33; border-radius: 9px; font-size: 18px; }
+.mac-help-button b, .mac-help-button small { display: block; }
+.mac-help-button small { margin-top: 1px; color: var(--muted); font-size: 10px; font-weight: 500; }
+.mac-help-button i { color: var(--blue); font-style: normal; font-size: 18px; }
 .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .metric { min-height: 126px; padding: 21px; display: flex; flex-direction: column; justify-content: space-between; }
 .metric span, .metric small { color: var(--muted); font-size: 12px; }
@@ -160,6 +166,16 @@ dialog form { padding: 24px; overflow: auto; }
 .form-error { margin-top: 14px; padding: 10px 12px; color: #ffd3d5; background: #35191c; border: 1px solid #6b292e; border-radius: 9px; }
 .confirm-dialog { width: min(450px, calc(100% - 28px)); }
 .confirm-dialog p { margin-bottom: 12px; }
+.mac-help-dialog { width: min(570px, calc(100% - 28px)); }
+.mac-help-intro { margin-bottom: 20px; color: #cad2da; }
+.mac-help-steps { display: grid; gap: 10px; margin: 0 0 20px; padding: 0; list-style: none; }
+.mac-help-steps li { display: grid; grid-template-columns: 34px 1fr; align-items: center; gap: 12px; padding: 12px; background: #10151a; border: 1px solid var(--line); border-radius: 11px; }
+.mac-help-steps li > b { display: grid; place-items: center; width: 34px; height: 34px; color: #0a0c0e; background: var(--lime); border-radius: 9px; }
+.mac-settings-button { display: block; width: 100%; text-align: center; text-decoration: none; }
+.mac-help-note { margin: 12px 0 0; color: var(--muted); font-size: 11px; }
+.mac-help-footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.mac-help-footer a { color: var(--blue); font-size: 12px; font-weight: 700; text-decoration: none; }
+.mac-help-footer a:hover { text-decoration: underline; }
 .toast { position: fixed; right: 20px; bottom: 20px; z-index: 5; max-width: 420px; padding: 13px 16px; color: var(--text); background: #202730; border: 1px solid #3b4652; border-radius: 11px; box-shadow: 0 16px 40px #0008; }
 .toast.error { color: #ffd7d9; background: #36191c; border-color: #6c292e; }
 
@@ -183,6 +199,8 @@ dialog form { padding: 24px; overflow: auto; }
   .connector-setup { padding: 21px; }
   .connector-downloads { grid-template-columns: 1fr; }
   .download-card.primary-download { grid-column: auto; }
+  .mac-help-footer { align-items: stretch; flex-direction: column; }
+  .mac-help-footer .button { width: 100%; }
   .safety-strip { flex-direction: column; gap: 7px; }
   .metrics, .side-stack { grid-template-columns: 1fr; }
   .metric { min-height: 105px; }
