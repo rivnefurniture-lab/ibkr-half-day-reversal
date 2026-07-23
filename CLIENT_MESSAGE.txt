@@ -1,0 +1,17 @@
+Hi Scott,
+
+All done. I built a local dashboard that scans the market before the close, ranks the intraday
+losers, sends the selected IBKR market-on-close buy, and automatically queues the market-on-open
+sale for the next session. It includes paper/live safety locks, position limits, logs and duplicate
+order protection.
+
+Databento is used for historical backtesting, including a current S&P 400 mid-cap universe and
+5 bps costs each way. IBKR is used for the live price feed and order execution.
+
+To start: install TWS and uv, unzip the package, log into TWS Paper Trading, enable API socket
+clients on port 7497, add the Databento key to `.env`, then run `start.command` on Mac or
+`start.bat` on Windows. Open the dashboard, connect account DUH450551, run a preview, and test one
+paper MOC/MOO cycle before enabling live mode.
+
+I included a detailed step-by-step setup guide in the package. I recommend keeping the first test
+at 1% capital, one position and automation off.

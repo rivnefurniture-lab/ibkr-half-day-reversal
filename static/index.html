@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Half-Day Reversal Control</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Half-Day Reversal home">
+          <span class="brand-mark">½</span>
+          <span><b>Half-Day</b><small>Reversal Control</small></span>
+        </a>
+        <div class="topbar-status">
+          <span id="modeBadge" class="badge neutral">Dry run</span>
+          <span id="connectionBadge" class="badge"><i></i> Disconnected</span>
+          <button id="settingsButton" class="icon-button" aria-label="Open settings">⚙</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="command-deck panel">
+          <div>
+            <p class="eyebrow">Strategy status</p>
+            <h1 id="primaryStatus">Safe and standing by</h1>
+            <p id="statusDetail" class="muted">Connect IBKR to preview today’s ranking. No orders can be sent yet.</p>
+          </div>
+          <div class="command-actions">
+            <button id="connectButton" class="button secondary">Connect IBKR</button>
+            <button id="scanButton" class="button secondary" disabled>Preview scan</button>
+            <button id="armButton" class="button warning" disabled>Arm session</button>
+            <button id="executeButton" class="button primary" disabled>Scan &amp; execute</button>
+          </div>
+          <div class="safety-strip">
+            <span><i id="armDot" class="status-dot"></i><b id="armLabel">Execution disarmed</b></span>
+            <span>Next automatic run <b id="nextRun">—</b></span>
+            <span>NYSE <b id="marketStatus">Unknown</b></span>
+          </div>
+        </section>
+
+        <section class="metrics" aria-label="Account overview">
+          <article class="metric panel"><span>Net liquidation</span><strong id="netLiq">—</strong><small id="accountLabel">No account</small></article>
+          <article class="metric panel"><span>Available funds</span><strong id="availableFunds">—</strong><small>IBKR reported</small></article>
+          <article class="metric panel"><span>Universe</span><strong id="universeCount">—</strong><small id="coverageLabel">Waiting for scan</small></article>
+          <article class="metric panel accent"><span>Selected today</span><strong id="selectedCount">—</strong><small>Worst intraday performers</small></article>
+        </section>
+
+        <section class="workspace-grid">
+          <article class="panel ranking-panel">
+            <div class="section-header">
+              <div><p class="eyebrow">Decision engine</p><h2>Today’s ranking</h2></div>
+              <span id="lastScan" class="muted">Not scanned yet</span>
+            </div>
+            <div id="rankingEmpty" class="empty-state">
+              <span>↘</span>
+              <h3>No ranking yet</h3>
+              <p>Connect IBKR and run a preview. The worst open-to-current performers will appear here.</p>
+            </div>
+            <div id="rankingTableWrap" class="table-wrap hidden">
+              <table>
+                <thead><tr><th>Rank</th><th>Symbol</th><th>Open</th><th>Now</th><th>Return</th><th>Target</th></tr></thead>
+                <tbody id="rankingBody"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <aside class="side-stack">
+            <article class="panel how-it-works">
+              <p class="eyebrow">Today’s flow</p>
+              <ol>
+                <li><span>1</span><div><b>Rank before close</b><small>Open-to-current return</small></div></li>
+                <li><span>2</span><div><b>Buy bottom decile</b><small>Market-on-close, equal weight</small></div></li>
+                <li><span>3</span><div><b>Exit next session</b><small>Market-on-open sell queued after fill</small></div></li>
+              </ol>
+            </article>
+            <article class="panel risk-card">
+              <div class="section-header"><div><p class="eyebrow">Risk envelope</p><h2>Guardrails</h2></div></div>
+              <dl>
+                <div><dt>Capital used</dt><dd id="capitalLimit">90%</dd></div>
+                <div><dt>Max positions</dt><dd id="maxPositions">25</dd></div>
+                <div><dt>Minimum coverage</dt><dd id="coverageLimit">75%</dd></div>
+                <div><dt>Duplicate protection</dt><dd class="good">On</dd></div>
+                <div><dt>Existing exit protection</dt><dd class="good">On</dd></div>
+              </dl>
+            </article>
+          </aside>
+        </section>
+
+        <section class="panel backtest-panel">
+          <div class="section-header">
+            <div><p class="eyebrow">Databento historical data</p><h2>Version 2 backtest</h2></div>
+            <span id="backtestStatus" class="muted">Estimate cost before downloading</span>
+          </div>
+          <form id="backtestForm" class="backtest-form">
+            <label>Start date<input id="backtestStart" type="date" required /></label>
+            <label>End date<input id="backtestEnd" type="date" required /></label>
+            <label>Download limit (USD)<input id="backtestMaxCost" type="number" min="0" max="100" step="0.01" value="1" required /><small>The run is blocked above this limit.</small></label>
+            <label>Cost each way (bps)<input id="backtestCostBps" type="number" min="0" max="100" step="0.1" value="5" required /><small>The study assumes 5 bps.</small></label>
+            <label>Bottom fraction<input id="backtestBottomFraction" type="number" min="0.01" max="0.5" step="0.01" value="0.1" required /><small>0.10 selects the worst decile.</small></label>
+            <label>Portfolio allocation<input id="backtestCapitalFraction" type="number" min="0.01" max="1" step="0.01" value="1" required /><small>Research only; independent of live risk.</small></label>
+            <label class="wide">Backtest universe<textarea id="backtestUniverse" rows="4" spellcheck="false" placeholder="Leave blank to use the universe in Settings"></textarea><small>Paste at least 10 mid-cap symbols here, or leave blank to use the configured live-scan universe.</small></label>
+            <div class="backtest-actions">
+              <button id="loadMidcaps" type="button" class="button secondary">Load current S&amp;P 400</button>
+              <button id="estimateBacktest" type="button" class="button secondary">Estimate Databento cost</button>
+              <button id="runBacktest" type="submit" class="button primary" disabled>Run backtest</button>
+            </div>
+          </form>
+          <div id="backtestResults" class="hidden">
+            <div class="backtest-metrics">
+              <article><span>Total return</span><strong id="btTotalReturn">—</strong></article>
+              <article><span>Annualized</span><strong id="btAnnualized">—</strong></article>
+              <article><span>Max drawdown</span><strong id="btDrawdown">—</strong></article>
+              <article><span>Win rate</span><strong id="btWinRate">—</strong></article>
+              <article><span>Trades</span><strong id="btTrades">—</strong></article>
+              <article><span>Ending equity</span><strong id="btEquity">—</strong></article>
+            </div>
+            <div class="table-wrap backtest-table">
+              <table>
+                <thead><tr><th>Signal date</th><th>Symbol</th><th>Signal return</th><th>Close entry</th><th>Next open</th><th>Net return</th></tr></thead>
+                <tbody id="backtestTradesBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="lower-grid">
+          <article class="panel">
+            <div class="section-header"><div><p class="eyebrow">Broker activity</p><h2>Strategy orders</h2></div><button id="cancelButton" class="text-button danger" disabled>Cancel open entry orders</button></div>
+            <div id="ordersEmpty" class="compact-empty">No strategy orders in this session.</div>
+            <div id="ordersTableWrap" class="table-wrap hidden"><table><thead><tr><th>Time</th><th>Symbol</th><th>Side</th><th>Type</th><th>Qty</th><th>Status</th></tr></thead><tbody id="ordersBody"></tbody></table></div>
+          </article>
+          <article class="panel">
+            <div class="section-header"><div><p class="eyebrow">Account</p><h2>Open positions</h2></div></div>
+            <div id="positionsEmpty" class="compact-empty">No stock positions reported.</div>
+            <div id="positionsTableWrap" class="table-wrap hidden"><table><thead><tr><th>Symbol</th><th>Quantity</th><th>Avg cost</th></tr></thead><tbody id="positionsBody"></tbody></table></div>
+          </article>
+        </section>
+
+        <section class="panel log-panel">
+          <div class="section-header"><div><p class="eyebrow">Live journal</p><h2>What the app is doing</h2></div><a class="text-button" href="/api/logs/download">Download log</a></div>
+          <div id="logs" class="logs"><div class="log-row"><time>—</time><span class="log-level info">INFO</span><p>Waiting for the app…</p></div></div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="settingsDialog">
+      <form id="settingsForm" method="dialog">
+        <div class="dialog-header"><div><p class="eyebrow">Configuration</p><h2>Strategy &amp; IBKR settings</h2></div><button type="button" id="closeSettings" class="icon-button">×</button></div>
+        <div class="form-grid">
+          <label>Mode<select id="mode" name="mode"><option value="dry_run">Dry run</option><option value="paper">IBKR paper</option><option value="live">IBKR live</option></select><small>Dry run never transmits orders.</small></label>
+          <label>IBKR host<input id="host" name="host" /></label>
+          <label>Socket port<input id="port" name="port" type="number" /><small>7497 is the common TWS paper port.</small></label>
+          <label>Client ID<input id="clientId" name="client_id" type="number" /></label>
+          <label>Account (optional)<input id="account" name="account" placeholder="Auto-detect" /></label>
+          <label class="toggle-label"><input id="autoEnabled" name="auto_enabled" type="checkbox" /><span>Run automatically each trading day</span></label>
+          <label>Minutes before close<input id="scanMinutes" name="scan_minutes_before_close" type="number" min="16" max="120" /></label>
+          <label>Bottom fraction<input id="bottomFraction" name="bottom_fraction" type="number" min="0.01" max="0.5" step="0.01" /></label>
+          <label>Capital allocation<input id="capitalFraction" name="capital_fraction" type="number" min="0.01" max="0.95" step="0.01" /></label>
+          <label>Max per position<input id="maxPositionFraction" name="max_position_fraction" type="number" min="0.01" max="0.25" step="0.01" /></label>
+          <label>Max positions<input id="maxPositionsInput" name="max_positions" type="number" min="1" max="100" /></label>
+          <label>Minimum stock price<input id="minPrice" name="min_price" type="number" min="1" step="0.5" /></label>
+          <label>Minimum data coverage<input id="minCoverage" name="min_data_coverage" type="number" min="0.5" max="1" step="0.05" /></label>
+          <label>Quote batch size<input id="batchSize" name="quote_batch_size" type="number" min="10" max="100" /></label>
+          <label class="wide">Universe<textarea id="universe" name="universe" rows="8" spellcheck="false"></textarea><small>Comma, space, or newline separated. The starter list is liquid large-cap US stocks; replace it with your chosen research universe.</small></label>
+        </div>
+        <div id="settingsError" class="form-error hidden"></div>
+        <div class="dialog-actions"><button type="button" id="resetSettings" class="button secondary">Discard</button><button type="submit" class="button primary">Save settings</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="armDialog" class="confirm-dialog">
+      <form id="armForm" method="dialog">
+        <p class="eyebrow">Execution lock</p><h2 id="armTitle">Arm this session</h2>
+        <p id="armMessage" class="muted">Type PAPER to allow orders for today.</p>
+        <input id="armPhrase" autocomplete="off" spellcheck="false" />
+        <div class="dialog-actions"><button type="button" id="cancelArm" class="button secondary">Cancel</button><button type="submit" class="button warning">Arm session</button></div>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast hidden" role="status"></div>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
