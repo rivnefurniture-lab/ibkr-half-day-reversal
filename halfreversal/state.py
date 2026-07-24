@@ -55,8 +55,8 @@ class RuntimeState:
 
     def save_config(self, config: TradingConfig) -> None:
         with self._lock:
-            self.config = config
             self._atomic_json_write(self.config_path, config.model_dump(mode="json"))
+            self.config = config
 
     def _load_runtime(self) -> None:
         if not self.runtime_path.exists():
@@ -118,5 +118,9 @@ class RuntimeState:
     @staticmethod
     def _atomic_json_write(path: Path, payload: object) -> None:
         temporary_path = path.with_suffix(f"{path.suffix}.tmp")
-        temporary_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-        os.replace(temporary_path, path)
+        try:
+            temporary_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+            os.replace(temporary_path, path)
+        except Exception:
+            temporary_path.unlink(missing_ok=True)
+            raise

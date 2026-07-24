@@ -54,3 +54,11 @@
 - **Fix:** After the blocked launch, open **System Settings -> Privacy & Security**, click
   **Open Anyway** under Security, and confirm. The hosted dashboard links directly to that settings
   screen. For warning-free distribution, rebuild and notarize with a Developer ID certificate.
+
+## Saving settings fails when the Mac disk is full
+
+- **Error:** `OSError: [Errno 28] No space left on device` while replacing `config.json`.
+- **Cause:** macOS had no room for the temporary atomic-write file.
+- **Fix:** Remove only expendable temporary artifacts, then save again. Atomic state writes now
+  delete a failed temporary file and keep both the active in-memory and on-disk configuration
+  unchanged until the replacement succeeds.
