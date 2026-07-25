@@ -62,3 +62,12 @@
 - **Fix:** Remove only expendable temporary artifacts, then save again. Atomic state writes now
   delete a failed temporary file and keep both the active in-memory and on-disk configuration
   unchanged until the replacement succeeds.
+
+## Packaged Mac connector remains offline
+
+- **Error:** The connector repeatedly shows `Connector offline` and the hosted dashboard controls
+  remain disabled, while TWS and the API settings appear correct.
+- **Cause:** The packaged Python/OpenSSL runtime cannot locate a trusted certificate authority
+  bundle, so the secure WebSocket fails with `CERTIFICATE_VERIFY_FAILED` before reaching Railway.
+- **Fix:** Build version 1.2.1 or newer. The connector now creates its WebSocket TLS context from
+  Certifi's packaged CA bundle.

@@ -600,9 +600,10 @@ wheels = [
 
 [[package]]
 name = "ibkr-half-day-reversal"
-version = "1.2.0"
+version = "1.2.1"
 source = { editable = "." }
 dependencies = [
+    { name = "certifi" },
     { name = "databento" },
     { name = "exchange-calendars" },
     { name = "fastapi" },
@@ -623,6 +624,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "certifi", specifier = ">=2025.1.31" },
     { name = "databento", specifier = ">=0.66" },
     { name = "exchange-calendars", specifier = ">=4.8" },
     { name = "fastapi", specifier = ">=0.116" },

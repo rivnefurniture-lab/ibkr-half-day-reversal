@@ -4,12 +4,14 @@ import asyncio
 import base64
 import json
 import os
+import ssl
 from collections.abc import Callable
 from contextlib import suppress
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit, urlunsplit
 
+import certifi
 import httpx
 from dotenv import load_dotenv
 from websockets.asyncio.client import connect
@@ -26,6 +28,12 @@ def websocket_url(hosted_url: str) -> str:
     return urlunsplit((scheme, parts.netloc, "/bridge/ws", "", ""))
 
 
+def websocket_ssl_context(address: str) -> ssl.SSLContext | None:
+    if not address.startswith("wss://"):
+        return None
+    return ssl.create_default_context(cafile=certifi.where())
+
+
 async def run_connector(status_callback: StatusCallback | None = None) -> None:
     hosted_url = os.getenv("HOSTED_DASHBOARD_URL", "").strip()
     token = os.getenv("BRIDGE_TOKEN", "").strip()
@@ -35,12 +43,15 @@ async def run_connector(status_callback: StatusCallback | None = None) -> None:
     if len(token) < 32:
         raise RuntimeError("BRIDGE_TOKEN must contain at least 32 characters")
 
+    address = websocket_url(hosted_url)
+    ssl_context = websocket_ssl_context(address)
     retry_seconds = 1
     while True:
         try:
             async with connect(
-                websocket_url(hosted_url),
+                address,
                 additional_headers={"Authorization": f"Bearer {token}"},
+                ssl=ssl_context,
                 open_timeout=15,
                 ping_interval=20,
                 ping_timeout=20,
@@ -72,7 +83,10 @@ async def run_connector(status_callback: StatusCallback | None = None) -> None:
         except asyncio.CancelledError:
             raise
         except Exception as exc:
-            message = f"Connector offline. Retrying in {retry_seconds}s."
+            detail = type(exc).__name__
+            if "CERTIFICATE_VERIFY_FAILED" in str(exc):
+                detail = "secure connection failed - install the latest connector"
+            message = f"Connector offline ({detail}). Retrying in {retry_seconds}s."
             print(f"{message} ({exc})")
             if status_callback:
                 status_callback(message, False)

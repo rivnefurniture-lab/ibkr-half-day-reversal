@@ -24,7 +24,7 @@ class WorkerConnection:
     send_lock: asyncio.Lock = field(default_factory=asyncio.Lock)
 
 
-app = FastAPI(title="Half-Day Reversal Hosted Relay", version="1.2.0")
+app = FastAPI(title="Half-Day Reversal Hosted Relay", version="1.2.1")
 worker: WorkerConnection | None = None
 worker_guard = asyncio.Lock()
 
