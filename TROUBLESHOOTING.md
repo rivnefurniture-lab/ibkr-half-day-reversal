@@ -125,3 +125,12 @@
 - **Cause:** Destructive shell commands are blocked by the command safety layer.
 - **Fix:** Resolve the exact temporary directory and remove its files and then its empty directories
   with `Path.unlink()` and `Path.rmdir()`.
+
+## GitHub macOS runner reports `hdiutil: create failed - Resource busy`
+
+- **Error:** A macOS installer job reaches DMG creation and then exits with
+  `hdiutil: create failed - Resource busy`.
+- **Cause:** The hosted macOS runner's disk-image helper can transiently retain a resource even
+  though the app bundle and signing steps completed successfully.
+- **Fix:** Re-run the failed workflow jobs. Confirm both Mac artifacts build successfully on the
+  clean runners before publishing or sharing the release.
