@@ -23,7 +23,7 @@ from urllib.parse import quote
 
 import certifi
 
-APP_VERSION = "1.2.3"
+APP_VERSION = "1.2.4"
 DEFAULT_HOSTED_URL = "https://half-day-reversal-production.up.railway.app"
 APP_FOLDER = "Half-Day Reversal"
 LOCAL_BASE_URL = "http://127.0.0.1:8765"

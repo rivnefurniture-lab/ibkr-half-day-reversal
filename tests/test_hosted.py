@@ -31,7 +31,7 @@ async def test_hosted_dashboard_disables_stale_asset_caching() -> None:
 
     assert response.status_code == 200
     assert response.headers["cache-control"] == "no-store, max-age=0"
-    assert '/static/styles.css?v=1.2.3' in response.text
-    assert '/static/app.js?v=1.2.3' in response.text
+    assert '/static/styles.css?v=1.2.4' in response.text
+    assert '/static/app.js?v=1.2.4' in response.text
     assert "Mac blocked the app?" in response.text
     assert "Open Mac Privacy &amp; Security" in response.text

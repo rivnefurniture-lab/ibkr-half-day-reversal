@@ -10,7 +10,7 @@ and opens only an outbound encrypted link. Port `7497` is never exposed publicly
 Download the latest release:
 <https://github.com/rivnefurniture-lab/ibkr-half-day-reversal/releases/latest>
 
-- **Already installed:** replace the old app with version `1.2.3`, then open it normally. The new
+- **Already installed:** replace the old app with version `1.2.4`, then open it normally. The new
   connector keeps the saved keys and automatically repairs an older connector left running in the
   background.
 - **Windows:** run `Half-Day-Reversal-Setup-Windows.exe`.
@@ -40,7 +40,7 @@ until paper testing is signed off. Click **Save and open dashboard**.
 
 The keys are stored privately in Scott's user application-data folder. They are not uploaded to
 GitHub or Railway. The dashboard opens already authenticated, so the keys are entered only once.
-The running screen must show **Connector version 1.2.3**.
+The running screen must show **Connector version 1.2.4**.
 
 ## 3. Configure TWS Paper
 
@@ -63,7 +63,8 @@ Do not create firewall or router forwarding for port `7497`.
    automatic daily runs off.
 5. Save, click **Connect IBKR**, and confirm the account label ends in `0551`.
 6. Click **Test paper order path**. This asks IBKR to validate a one-share SPY MOC what-if but does
-   not transmit an order. Confirm the green success message.
+   not transmit an order. Confirm the green success message. If IBKR rejects the simulation, the
+   dashboard shows the actual rejection instead of reporting a false pass.
 7. Click **Preview scan** during regular US market hours.
 
 If quote coverage is insufficient, confirm the IBKR user has US-equity market data enabled for

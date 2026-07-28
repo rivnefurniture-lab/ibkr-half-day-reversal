@@ -179,13 +179,41 @@ class IBKRBroker:
             raise RuntimeError("IBKR is not connected")
         contract = await self._qualified_stock(symbol)
         order = Order(
+            account=self._account,
             action="BUY",
             orderType="MOC",
             totalQuantity=1,
             tif="DAY",
             orderRef="HDR-SELFTEST",
         )
-        order_state = await self.ib.whatIfOrderAsync(contract, order)
+        validation_errors: list[tuple[int, str]] = []
+
+        def capture_error(
+            request_id: int,
+            error_code: int,
+            error_message: str,
+            _contract: Any = None,
+        ) -> None:
+            if request_id >= 0 and error_code < 2000:
+                validation_errors.append((error_code, error_message))
+
+        self.ib.errorEvent += capture_error
+        try:
+            order_state = await asyncio.wait_for(
+                self.ib.whatIfOrderAsync(contract, order),
+                timeout=20,
+            )
+            await asyncio.sleep(0.5)
+        except TimeoutError as exc:
+            raise RuntimeError(
+                "IBKR did not answer the paper order-path test within 20 seconds"
+            ) from exc
+        finally:
+            self.ib.errorEvent -= capture_error
+
+        if validation_errors:
+            code, message = validation_errors[0]
+            raise RuntimeError(f"IBKR rejected the paper order-path test ({code}): {message}")
         return {
             "symbol": symbol,
             "order_type": "MOC",

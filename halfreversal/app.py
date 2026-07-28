@@ -35,7 +35,7 @@ async def lifespan(_: FastAPI):
     await service.stop()
 
 
-APP_VERSION = "1.2.3"
+APP_VERSION = "1.2.4"
 app = FastAPI(title="Half-Day Reversal Control", version=APP_VERSION, lifespan=lifespan)
 
 

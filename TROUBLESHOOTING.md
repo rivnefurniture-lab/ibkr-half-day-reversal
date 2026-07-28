@@ -101,6 +101,17 @@
 - **Fix:** Initialize connection-test doubles as disconnected; use connected doubles only for order
   construction and lifecycle tests.
 
+## IBKR what-if returns a state and a separate rejection
+
+- **Error:** The order-path test reports success even though TWS also emits error 201, such as
+  insufficient settled cash.
+- **Cause:** IBKR returns the what-if `OrderState` and order rejection through separate API event
+  channels. The rejection can arrive shortly after the state, so checking only the returned state
+  or removing the error listener immediately can create a false positive.
+- **Fix:** Capture request errors during the what-if call and a short post-response grace period,
+  fail on any order-level rejection, remove the temporary event handler afterward, and time out
+  clearly if IBKR never answers.
+
 ## Railway polling loop fails in zsh
 
 - **Error:** `zsh: read-only variable: status`.

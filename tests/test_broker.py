@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 from types import SimpleNamespace
 
 import pytest
@@ -7,6 +8,23 @@ from ib_async import Order, Stock
 
 from halfreversal.broker import IBKRBroker
 from halfreversal.models import TradingConfig, TradingMode
+
+
+class FakeEvent:
+    def __init__(self) -> None:
+        self.handlers: list = []
+
+    def __iadd__(self, handler):
+        self.handlers.append(handler)
+        return self
+
+    def __isub__(self, handler):
+        self.handlers.remove(handler)
+        return self
+
+    def emit(self, *args) -> None:
+        for handler in tuple(self.handlers):
+            handler(*args)
 
 
 class FakeIB:
@@ -23,6 +41,8 @@ class FakeIB:
         self.placed: list[tuple[Stock, Order]] = []
         self.cancelled: list[Order] = []
         self.open_trades: list[SimpleNamespace] = []
+        self.errorEvent = FakeEvent()
+        self.what_if_error: tuple[int, str] | None = None
 
     def isConnected(self) -> bool:
         return self.connected
@@ -54,6 +74,16 @@ class FakeIB:
 
     async def whatIfOrderAsync(self, contract: Stock, order: Order) -> SimpleNamespace:
         self.placed.append((contract, order))
+        if self.what_if_error:
+            code, message = self.what_if_error
+            asyncio.get_running_loop().call_later(
+                0.01,
+                self.errorEvent.emit,
+                7,
+                code,
+                message,
+                contract,
+            )
         return SimpleNamespace(status="PreSubmitted", warningText="")
 
     def openTrades(self) -> list[SimpleNamespace]:
@@ -136,6 +166,18 @@ async def test_paper_order_test_uses_what_if_without_transmitting() -> None:
         1,
         "HDR-SELFTEST",
     )
+
+
+@pytest.mark.asyncio
+async def test_paper_order_test_surfaces_ibkr_rejection_event() -> None:
+    fake_ib = FakeIB()
+    fake_ib.what_if_error = (201, "Insufficient settled cash")
+    broker = broker_with(fake_ib)
+
+    with pytest.raises(RuntimeError, match=r"rejected.*201.*Insufficient settled cash"):
+        await broker.validate_paper_order_path()
+
+    assert fake_ib.errorEvent.handlers == []
 
 
 @pytest.mark.asyncio
