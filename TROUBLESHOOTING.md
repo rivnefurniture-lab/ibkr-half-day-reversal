@@ -163,3 +163,9 @@
   retries. Reject false-success results when IBKR immediately marks an exit `Cancelled`,
   `ApiCancelled`, or `Inactive`. If an accepted opening exit is later cancelled or only partially
   filled, persist its remaining quantity and retry before the open or at the following session.
+
+## Railway polling fails in zsh with a read-only variable
+
+- **Error:** `zsh: read-only variable: status`.
+- **Cause:** `status` is a special read-only parameter in zsh.
+- **Fix:** Store the deployment result in a task-specific variable such as `deployment_state`.
