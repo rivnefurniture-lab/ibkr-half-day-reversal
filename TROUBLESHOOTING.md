@@ -72,6 +72,17 @@
 - **Fix:** Build version 1.2.1 or newer. The connector now creates its WebSocket TLS context from
   Certifi's packaged CA bundle.
 
+## Reinstalling the fixed connector still leaves the hosted dashboard offline
+
+- **Error:** The latest app is downloaded and opened, but Railway still reports no connector and
+  the dashboard remains disabled.
+- **Cause:** Closing the previous Mac window only minimized its v1.2.0 process. That TLS-broken
+  process continued owning `127.0.0.1:8765`, while the newly opened app mistook the local port for
+  a healthy hosted bridge and exited before connecting.
+- **Fix:** Version 1.2.2 identifies the existing Half-Day service separately from the hosted bridge.
+  If it finds an older local process whose relay is offline, it starts the corrected secure bridge,
+  writes persistent diagnostics, and takes over the local service if the old process later exits.
+
 ## Railway polling loop fails in zsh
 
 - **Error:** `zsh: read-only variable: status`.

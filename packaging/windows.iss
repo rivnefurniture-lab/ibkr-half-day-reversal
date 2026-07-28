@@ -1,5 +1,5 @@
 #define MyAppName "Half-Day Reversal Connector"
-#define MyAppVersion "1.2.0"
+#define MyAppVersion "1.2.2"
 #define MyAppExeName "Half-Day Reversal Connector.exe"
 
 [Setup]

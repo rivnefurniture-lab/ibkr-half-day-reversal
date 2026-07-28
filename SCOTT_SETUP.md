@@ -10,6 +10,9 @@ and opens only an outbound encrypted link. Port `7497` is never exposed publicly
 Download the latest release:
 <https://github.com/rivnefurniture-lab/ibkr-half-day-reversal/releases/latest>
 
+- **Already installed:** replace the old app with version `1.2.2`, then open it normally. The new
+  connector keeps the saved keys and automatically repairs an older connector left running in the
+  background.
 - **Windows:** run `Half-Day-Reversal-Setup-Windows.exe`.
 - **Apple Silicon Mac:** open `Half-Day-Reversal-macOS-arm64.dmg`, then drag the app to
   Applications.
@@ -37,6 +40,7 @@ until paper testing is signed off. Click **Save and open dashboard**.
 
 The keys are stored privately in Scott's user application-data folder. They are not uploaded to
 GitHub or Railway. The dashboard opens already authenticated, so the keys are entered only once.
+The running screen must show **Connector version 1.2.2**.
 
 ## 3. Configure TWS Paper
 
@@ -62,6 +66,9 @@ Do not create firewall or router forwarding for port `7497`.
 
 If quote coverage is insufficient, confirm the IBKR user has US-equity market data enabled for
 API use and shared with the paper account.
+
+If the connector does not become online within 30 seconds, click **Open diagnostics** in the
+connector and send `connector.log` to Andrii. The log never contains either access key.
 
 ## 5. Verify one paper MOC/MOO cycle
 

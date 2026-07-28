@@ -6,12 +6,17 @@ from pathlib import Path
 
 import pytest
 
+import halfreversal.desktop as desktop
 from halfreversal.desktop import (
+    APP_VERSION,
     DEFAULT_HOSTED_URL,
     DesktopSettings,
+    LocalServiceProbe,
     apply_settings,
     dashboard_url,
     load_settings,
+    probe_local_service,
+    runtime_action,
     save_settings,
     user_data_dir,
     validate_settings,
@@ -80,3 +85,59 @@ def test_dashboard_url_pairs_browser_without_server_query_parameter() -> None:
 
     assert url.startswith(f"{DEFAULT_HOSTED_URL}/#access=")
     assert "?" not in url
+
+
+def test_probe_recognizes_current_connector(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(
+        desktop,
+        "_read_local_json",
+        lambda url: (
+            {"product": "half-day-reversal", "version": APP_VERSION}
+            if url == desktop.LOCAL_IDENTITY_URL
+            else None
+        ),
+    )
+
+    assert probe_local_service() == LocalServiceProbe(
+        running=True,
+        is_half_day=True,
+        version=APP_VERSION,
+    )
+
+
+def test_probe_recognizes_legacy_connector(monkeypatch: pytest.MonkeyPatch) -> None:
+    legacy_status = {
+        "connected": False,
+        "mode": "dry_run",
+        "armed": False,
+        "config": {},
+        "rankings": [],
+        "orders": [],
+    }
+    monkeypatch.setattr(
+        desktop,
+        "_read_local_json",
+        lambda url: legacy_status if url == desktop.LOCAL_STATUS_URL else None,
+    )
+
+    assert probe_local_service() == LocalServiceProbe(
+        running=True,
+        is_half_day=True,
+        version="legacy",
+    )
+
+
+def test_runtime_recovers_offline_legacy_connector() -> None:
+    legacy = LocalServiceProbe(running=True, is_half_day=True, version="legacy")
+
+    assert runtime_action(legacy, worker_connected=False) == "recover"
+    assert runtime_action(legacy, worker_connected=True) == "existing"
+
+
+def test_runtime_does_not_duplicate_current_bridge_or_unrelated_service() -> None:
+    current = LocalServiceProbe(running=True, is_half_day=True, version=APP_VERSION)
+    unrelated = LocalServiceProbe(running=True, is_half_day=False)
+
+    assert runtime_action(current, worker_connected=False) == "existing"
+    assert runtime_action(unrelated, worker_connected=False) == "blocked"
+    assert runtime_action(LocalServiceProbe(False, False), False) == "start"

@@ -35,11 +35,20 @@ async def lifespan(_: FastAPI):
     await service.stop()
 
 
-app = FastAPI(title="Half-Day Reversal Control", version="1.2.0", lifespan=lifespan)
+APP_VERSION = "1.2.2"
+app = FastAPI(title="Half-Day Reversal Control", version=APP_VERSION, lifespan=lifespan)
 
 
 class ArmRequest(BaseModel):
     phrase: str
+
+
+@app.get("/api/connector")
+async def connector_identity() -> dict[str, str]:
+    return {
+        "product": "half-day-reversal",
+        "version": APP_VERSION,
+    }
 
 
 @app.get("/api/status", response_model=RuntimeSnapshot)

@@ -57,7 +57,7 @@ if sys.platform == "darwin":
         bundle_identifier="com.halfday.reversal.connector",
         info_plist={
             "CFBundleDisplayName": "Half-Day Reversal Connector",
-            "CFBundleShortVersionString": "1.2.1",
+            "CFBundleShortVersionString": "1.2.2",
             "NSHighResolutionCapable": True,
         },
     )

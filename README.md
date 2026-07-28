@@ -19,6 +19,8 @@ transmits them.
 
 - Public Railway dashboard with access-key protection.
 - Outbound TWS connector with no inbound firewall or router changes.
+- Automatic recovery when an older hidden connector is still running after an upgrade.
+- Persistent rotating connector diagnostics with no API keys or access tokens.
 - Account values, positions, rankings, orders, logs, and downloadable journals.
 - Scheduling relative to the actual NYSE close, including early-close sessions.
 - Dry-run, IBKR paper, and explicitly unlocked IBKR live modes.

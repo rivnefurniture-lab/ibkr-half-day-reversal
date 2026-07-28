@@ -2,9 +2,12 @@ from __future__ import annotations
 
 import asyncio
 import json
+import logging
 import os
+import platform
 import plistlib
 import queue
+import ssl
 import subprocess
 import sys
 import threading
@@ -13,13 +16,20 @@ import urllib.error
 import urllib.request
 import webbrowser
 from dataclasses import asdict, dataclass
+from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from tkinter import BooleanVar, StringVar, Tk, messagebox, ttk
 from urllib.parse import quote
 
+import certifi
+
+APP_VERSION = "1.2.2"
 DEFAULT_HOSTED_URL = "https://half-day-reversal-production.up.railway.app"
 APP_FOLDER = "Half-Day Reversal"
-LOCAL_STATUS_URL = "http://127.0.0.1:8765/api/status"
+LOCAL_BASE_URL = "http://127.0.0.1:8765"
+LOCAL_IDENTITY_URL = f"{LOCAL_BASE_URL}/api/connector"
+LOCAL_STATUS_URL = f"{LOCAL_BASE_URL}/api/status"
+PRODUCT_ID = "half-day-reversal"
 
 
 @dataclass(frozen=True)
@@ -29,6 +39,13 @@ class DesktopSettings:
     databento_api_key: str = ""
     start_with_computer: bool = True
     allow_live_trading: bool = False
+
+
+@dataclass(frozen=True)
+class LocalServiceProbe:
+    running: bool
+    is_half_day: bool
+    version: str | None = None
 
 
 def user_data_dir(
@@ -162,12 +179,79 @@ def configure_startup(enabled: bool, data_dir: Path) -> None:
     )
 
 
-def local_service_running() -> bool:
+def _read_local_json(url: str) -> dict | None:
     try:
-        with urllib.request.urlopen(LOCAL_STATUS_URL, timeout=1):
-            return True
-    except (OSError, urllib.error.URLError):
+        with urllib.request.urlopen(url, timeout=1) as response:
+            payload = json.loads(response.read())
+        return payload if isinstance(payload, dict) else None
+    except (OSError, urllib.error.URLError, json.JSONDecodeError):
+        return None
+
+
+def probe_local_service() -> LocalServiceProbe:
+    identity = _read_local_json(LOCAL_IDENTITY_URL)
+    if identity is not None:
+        return LocalServiceProbe(
+            running=True,
+            is_half_day=identity.get("product") == PRODUCT_ID,
+            version=str(identity.get("version", "")) or None,
+        )
+
+    status = _read_local_json(LOCAL_STATUS_URL)
+    if status is None:
+        return LocalServiceProbe(running=False, is_half_day=False)
+    expected = {"connected", "mode", "armed", "config", "rankings", "orders"}
+    return LocalServiceProbe(
+        running=True,
+        is_half_day=expected.issubset(status),
+        version="legacy" if expected.issubset(status) else None,
+    )
+
+
+def local_service_running() -> bool:
+    probe = probe_local_service()
+    return probe.running and probe.is_half_day
+
+
+def runtime_action(probe: LocalServiceProbe, worker_connected: bool) -> str:
+    if probe.running and not probe.is_half_day:
+        return "blocked"
+    if probe.is_half_day and probe.version in {APP_VERSION, None}:
+        return "existing"
+    if probe.is_half_day:
+        return "existing" if worker_connected else "recover"
+    return "start"
+
+
+def hosted_worker_connected(settings: DesktopSettings) -> bool:
+    request = urllib.request.Request(
+        f"{settings.hosted_url.rstrip('/')}/health",
+        headers={"User-Agent": f"Half-Day-Reversal-Connector/{APP_VERSION}"},
+    )
+    context = ssl.create_default_context(cafile=certifi.where())
+    try:
+        with urllib.request.urlopen(request, timeout=4, context=context) as response:
+            payload = json.loads(response.read())
+        return bool(payload.get("worker_connected")) if isinstance(payload, dict) else False
+    except (OSError, urllib.error.URLError, json.JSONDecodeError):
         return False
+
+
+def connector_logger(data_dir: Path) -> logging.Logger:
+    data_dir.mkdir(parents=True, exist_ok=True)
+    logger = logging.getLogger(f"halfreversal.desktop.{id(data_dir)}")
+    logger.setLevel(logging.INFO)
+    logger.propagate = False
+    if not logger.handlers:
+        handler = RotatingFileHandler(
+            data_dir / "connector.log",
+            maxBytes=2 * 1024 * 1024,
+            backupCount=2,
+            encoding="utf-8",
+        )
+        handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
+        logger.addHandler(handler)
+    return logger
 
 
 class DesktopApp:
@@ -178,7 +262,20 @@ class DesktopApp:
         self.background = background
         self.events: queue.Queue[tuple[str, bool]] = queue.Queue()
         self.server = None
+        self.bridge_thread: threading.Thread | None = None
+        self.server_thread: threading.Thread | None = None
+        self.monitor_thread: threading.Thread | None = None
+        self.stop_event = threading.Event()
         self.restart_after_save = False
+        self.logger = connector_logger(self.data_dir)
+        self.logger.info(
+            "Connector v%s starting; platform=%s architecture=%s frozen=%s background=%s",
+            APP_VERSION,
+            platform.system(),
+            platform.machine(),
+            getattr(sys, "frozen", False),
+            background,
+        )
 
         self.root = Tk()
         self.root.title("Half-Day Reversal Connector")
@@ -325,8 +422,13 @@ class DesktopApp:
         card.pack(fill="x", pady=(0, 20))
         ttk.Label(card, text="CONNECTOR STATUS", style="Status.TLabel").pack(anchor="w")
         self.status_var = StringVar(value="Starting local service…")
-        ttk.Label(card, textvariable=self.status_var, style="Status.TLabel").pack(
-            anchor="w", pady=(10, 0)
+        ttk.Label(
+            card,
+            textvariable=self.status_var,
+            style="Status.TLabel",
+            wraplength=500,
+        ).pack(
+            anchor="w", fill="x", pady=(10, 0)
         )
 
         actions = ttk.Frame(frame)
@@ -340,6 +442,9 @@ class DesktopApp:
         ttk.Button(actions, text="Change keys", command=self._change_keys).pack(
             side="left", padx=10
         )
+        ttk.Button(actions, text="Open diagnostics", command=self._open_diagnostics).pack(
+            side="left"
+        )
         ttk.Button(actions, text="Quit connector", command=self._quit).pack(side="right")
         ttk.Label(
             frame,
@@ -350,22 +455,87 @@ class DesktopApp:
             style="Muted.TLabel",
             wraplength=530,
         ).pack(anchor="w", pady=(28, 0))
+        ttk.Label(
+            frame,
+            text=f"Connector version {APP_VERSION}",
+            style="Muted.TLabel",
+        ).pack(anchor="w", pady=(12, 0))
 
     def _start_runtime(self, open_browser: bool) -> None:
         if self.settings is None:
             return
         apply_settings(self.settings, self.data_dir)
-        if local_service_running():
-            self.events.put(("Connector is already running on this computer.", True))
-            if open_browser:
-                self.root.after(300, self._open_dashboard)
-            return
-        threading.Thread(target=self._run_server, daemon=True).start()
-        threading.Thread(target=self._run_bridge, daemon=True).start()
+        probe = probe_local_service()
+        self.logger.info(
+            "Local probe: running=%s half_day=%s version=%s",
+            probe.running,
+            probe.is_half_day,
+            probe.version or "unknown",
+        )
+        needs_worker_probe = probe.is_half_day and probe.version not in {APP_VERSION, None}
+        worker_connected = (
+            hosted_worker_connected(self.settings) if needs_worker_probe else False
+        )
+        action = runtime_action(probe, worker_connected)
+        self.logger.info("Runtime action=%s worker_connected=%s", action, worker_connected)
+        if action == "blocked":
+            message = (
+                "Port 8765 is used by another app. Quit that app, then reopen this connector."
+            )
+            self.logger.error(message)
+            self.events.put((message, False))
+        elif action == "existing":
+            message = "Connector is already running and will keep retrying automatically."
+            self.logger.info(message)
+            self.events.put((message, worker_connected))
+        elif action == "recover":
+            message = "Repairing the previous connector and reconnecting securely…"
+            self.logger.warning(
+                "Recovering local connector version=%s", probe.version or "unknown"
+            )
+            self.events.put((message, False))
+            self._start_bridge()
+            self.monitor_thread = threading.Thread(
+                target=self._monitor_legacy_service,
+                daemon=True,
+                name="local-service-monitor",
+            )
+            self.monitor_thread.start()
+        else:
+            self._start_server()
+            self._start_bridge()
         if open_browser:
             self.root.after(1400, self._open_dashboard)
 
+    def _start_server(self) -> None:
+        if self.server_thread is not None and self.server_thread.is_alive():
+            return
+        self.server_thread = threading.Thread(
+            target=self._run_server,
+            daemon=True,
+            name="local-service",
+        )
+        self.server_thread.start()
+
+    def _start_bridge(self) -> None:
+        if self.bridge_thread is not None and self.bridge_thread.is_alive():
+            return
+        self.bridge_thread = threading.Thread(
+            target=self._run_bridge,
+            daemon=True,
+            name="hosted-bridge",
+        )
+        self.bridge_thread.start()
+
+    def _monitor_legacy_service(self) -> None:
+        while not self.stop_event.wait(2):
+            if not local_service_running():
+                self.logger.warning("Previous local service stopped; starting v%s", APP_VERSION)
+                self._start_server()
+                return
+
     def _run_server(self) -> None:
+        self.logger.info("Starting local strategy service on 127.0.0.1:8765")
         try:
             import uvicorn
 
@@ -381,14 +551,17 @@ class DesktopApp:
             self.server = uvicorn.Server(config)
             asyncio.run(self.server.serve())
         except Exception as exc:
-            self.events.put((f"Local service failed: {exc}", False))
+            self.logger.exception("Local service failed")
+            self.events.put((f"Local service failed: {type(exc).__name__}", False))
 
     def _run_bridge(self) -> None:
+        self.logger.info("Starting secure hosted bridge")
         for _ in range(80):
             if local_service_running():
                 break
             time.sleep(0.1)
         else:
+            self.logger.error("Local service did not start within 8 seconds")
             self.events.put(("Local service did not start.", False))
             return
         try:
@@ -396,10 +569,29 @@ class DesktopApp:
 
             asyncio.run(run_connector(self._bridge_status))
         except Exception as exc:
-            self.events.put((f"Connector stopped: {exc}", False))
+            self.logger.exception("Hosted bridge stopped")
+            self.events.put((f"Connector stopped: {type(exc).__name__}", False))
 
     def _bridge_status(self, message: str, online: bool) -> None:
+        self.logger.info("Bridge online=%s status=%s", online, message)
         self.events.put((message, online))
+
+    def _open_diagnostics(self) -> None:
+        path = self.data_dir / "connector.log"
+        path.touch(exist_ok=True)
+        try:
+            if sys.platform == "darwin":
+                subprocess.Popen(["open", "-R", str(path)])
+            elif sys.platform.startswith("win"):
+                os.startfile(path.parent)  # type: ignore[attr-defined]
+            else:
+                subprocess.Popen(["xdg-open", str(path.parent)])
+        except OSError as exc:
+            messagebox.showerror(
+                "Could not open diagnostics",
+                f"Log file: {path}\n\n{exc}",
+                parent=self.root,
+            )
 
     def _poll_events(self) -> None:
         try:
@@ -427,6 +619,8 @@ class DesktopApp:
             self._show_setup()
 
     def _quit(self) -> None:
+        self.stop_event.set()
+        self.logger.info("Connector v%s quitting", APP_VERSION)
         if self.server is not None:
             self.server.should_exit = True
         self.root.destroy()
