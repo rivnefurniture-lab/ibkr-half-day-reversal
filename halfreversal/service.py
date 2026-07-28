@@ -248,7 +248,7 @@ class TradingService:
         today = now.astimezone(NEW_YORK).date().isoformat()
         if self.state.last_execution_date == today:
             raise RuntimeError("Orders have already been submitted for this trading day")
-        if self.state.pending_exit_order_ids:
+        if self.state.pending_exit_order_ids or self.state.pending_exit_intents:
             raise RuntimeError("A previous strategy exit is still open; new entries are blocked")
         if config.mode != TradingMode.DRY_RUN:
             _, close_at = self._next_session_window(now)
@@ -351,30 +351,21 @@ class TradingService:
             self.state.log(f"{symbol} MOC finished as {status} with no fill", "WARNING")
             return
         try:
-            exit_reference = f"{reference}-EXIT"
-            submitted = await self.broker.place_moo(symbol, filled, exit_reference)
-            self.state.pending_exit_order_ids.add(submitted.order_id)
             self.state.pending_entries.pop(trade.order.orderId, None)
-            self.state.add_order(
-                OrderView(
-                    order_id=submitted.order_id,
-                    symbol=symbol,
-                    side="SELL",
-                    order_type="MOO",
-                    quantity=filled,
-                    status=submitted.status,
-                    reference=exit_reference,
-                )
-            )
+            self._schedule_exit_intent(symbol, filled, reference)
             self.state.save_runtime()
-            self.state.log(f"{symbol}: {filled} shares filled; next-open sell queued", "SUCCESS")
-            self._track_order_task(
-                submitted.order_id,
-                self._watch_exit_fill(symbol, submitted.trade),
+            submit_at = datetime.fromisoformat(
+                str(self.state.pending_exit_intents[symbol]["submit_at"])
+            )
+            self.state.log(
+                f"{symbol}: {filled} shares filled; next-open sell scheduled for "
+                f"{submit_at.astimezone(NEW_YORK):%I:%M %p ET}",
+                "SUCCESS",
             )
         except Exception as exc:
             self.state.log(
-                f"URGENT: {symbol} filled {filled} shares but its MOO exit failed: {exc}",
+                f"URGENT: {symbol} filled {filled} shares but its exit could not be scheduled: "
+                f"{exc}",
                 "ERROR",
             )
 
@@ -387,9 +378,32 @@ class TradingService:
                 break
             await asyncio.sleep(1)
         self.state.pending_exit_order_ids.discard(trade.order.orderId)
+        filled = int(float(trade.orderStatus.filled or 0))
+        total_quantity = int(float(trade.order.totalQuantity or 0))
+        remaining = max(0, total_quantity - filled)
+        if status != "Filled" and remaining:
+            entry_reference = (trade.order.orderRef or "").removesuffix("-EXIT")
+            self._schedule_exit_intent(symbol, remaining, entry_reference)
+            scheduled = self.state.pending_exit_intents[symbol]
+            original_submit_at = datetime.fromisoformat(str(scheduled["submit_at"]))
+            original_open_at = original_submit_at + timedelta(minutes=90)
+            now = datetime.now(UTC)
+            if now >= original_open_at:
+                original_session = self.calendar.date_to_session(
+                    pd.Timestamp(original_open_at.astimezone(NEW_YORK).date()),
+                    direction="next",
+                )
+                retry_session = self.calendar.next_session(original_session)
+                retry_open_at = self.calendar.session_open(retry_session).to_pydatetime()
+                scheduled["submit_at"] = (
+                    retry_open_at.astimezone(UTC) - timedelta(minutes=90)
+                ).isoformat()
         self.state.save_runtime()
         level = "SUCCESS" if status == "Filled" else "WARNING"
-        self.state.log(f"{symbol} next-open exit finished as {status}", level)
+        suffix = ""
+        if status != "Filled" and remaining:
+            suffix = f"; {remaining} shares remain scheduled for exit"
+        self.state.log(f"{symbol} next-open exit finished as {status}{suffix}", level)
 
     async def _restore_open_strategy_orders(self) -> None:
         open_trades = self.broker.ib.openTrades()
@@ -406,6 +420,7 @@ class TradingService:
         ]
         recovered_order_ids: set[int] = set()
         active_exit_ids: set[int] = set()
+        active_exit_symbols: set[str] = set()
         for trade in strategy_trades:
             reference = trade.order.orderRef or ""
             if not reference.startswith(STRATEGY_REFERENCE_PREFIX):
@@ -429,6 +444,7 @@ class TradingService:
             if order_type == "MOO":
                 if trade.orderStatus.status not in FINAL_ORDER_STATUSES:
                     active_exit_ids.add(order_id)
+                    active_exit_symbols.add(trade.contract.symbol)
                     self._track_order_task(
                         order_id,
                         self._watch_exit_fill(trade.contract.symbol, trade),
@@ -439,6 +455,8 @@ class TradingService:
                     self._watch_entry_fill(trade.contract.symbol, trade, reference),
                 )
         self.state.pending_exit_order_ids = active_exit_ids
+        for symbol in active_exit_symbols:
+            self.state.pending_exit_intents.pop(symbol, None)
         await self._recover_unreported_entries(recovered_order_ids)
         self.state.save_runtime()
 
@@ -459,34 +477,22 @@ class TradingService:
                 )
                 self.state.pending_entries.pop(order_id, None)
                 continue
-            reference = f"{entry['reference']}-EXIT"
             try:
-                submitted = await self.broker.place_moo(symbol, acquired_quantity, reference)
-                self.state.pending_exit_order_ids.add(submitted.order_id)
+                entry_reference = str(entry["reference"])
+                self._schedule_exit_intent(
+                    symbol,
+                    acquired_quantity,
+                    entry_reference,
+                )
                 self.state.pending_entries.pop(order_id, None)
-                self.state.add_order(
-                    OrderView(
-                        order_id=submitted.order_id,
-                        symbol=symbol,
-                        side="SELL",
-                        order_type="MOO",
-                        quantity=acquired_quantity,
-                        status=submitted.status,
-                        reference=reference,
-                    )
-                )
                 self.state.log(
-                    f"Recovered {symbol} after restart and queued a "
-                    f"{acquired_quantity}-share MOO exit",
+                    f"Recovered {symbol} after restart and scheduled a "
+                    f"{acquired_quantity}-share next-open exit",
                     "WARNING",
-                )
-                self._track_order_task(
-                    submitted.order_id,
-                    self._watch_exit_fill(symbol, submitted.trade),
                 )
             except Exception as exc:
                 self.state.log(
-                    f"URGENT: restart recovery could not queue the {symbol} exit: {exc}",
+                    f"URGENT: restart recovery could not schedule the {symbol} exit: {exc}",
                     "ERROR",
                 )
 
@@ -525,6 +531,8 @@ class TradingService:
                 if refresh_counter >= 3 and self.broker.connected:
                     refresh_counter = 0
                     await self.refresh_account()
+                if self.broker.connected:
+                    await self._submit_due_exit_intents(now)
             except Exception as exc:
                 self.state.log(f"Scheduler check failed: {exc}", "ERROR")
             await asyncio.sleep(5)
@@ -538,6 +546,75 @@ class TradingService:
         open_at = self.calendar.session_open(session).to_pydatetime().astimezone(UTC)
         close_at = self.calendar.session_close(session).to_pydatetime().astimezone(UTC)
         return open_at, close_at
+
+    def _next_open_submission_time(self, entry_reference: str) -> datetime:
+        signal_date = entry_reference.removeprefix(STRATEGY_REFERENCE_PREFIX)[:10]
+        entry_session = self.calendar.date_to_session(
+            pd.Timestamp(signal_date),
+            direction="next",
+        )
+        exit_session = self.calendar.next_session(entry_session)
+        exit_open = self.calendar.session_open(exit_session).to_pydatetime()
+        return exit_open.astimezone(UTC) - timedelta(minutes=90)
+
+    def _schedule_exit_intent(
+        self,
+        symbol: str,
+        quantity: int,
+        entry_reference: str,
+    ) -> None:
+        self.state.pending_exit_intents[symbol] = {
+            "symbol": symbol,
+            "quantity": quantity,
+            "entry_reference": entry_reference,
+            "submit_at": self._next_open_submission_time(entry_reference).isoformat(),
+            "last_attempt_at": None,
+        }
+
+    async def _submit_due_exit_intents(self, now: datetime | None = None) -> None:
+        check_at = (now or datetime.now(UTC)).astimezone(UTC)
+        for symbol, intent in tuple(self.state.pending_exit_intents.items()):
+            submit_at = datetime.fromisoformat(str(intent["submit_at"])).astimezone(UTC)
+            if check_at < submit_at:
+                continue
+            last_attempt_raw = intent.get("last_attempt_at")
+            if last_attempt_raw:
+                last_attempt = datetime.fromisoformat(str(last_attempt_raw)).astimezone(UTC)
+                if check_at - last_attempt < timedelta(minutes=1):
+                    continue
+            intent["last_attempt_at"] = check_at.isoformat()
+            self.state.save_runtime()
+            quantity = int(intent["quantity"])
+            reference = f"{intent['entry_reference']}-EXIT"
+            try:
+                submitted = await self.broker.place_moo(symbol, quantity, reference)
+                self.state.pending_exit_order_ids.add(submitted.order_id)
+                self.state.pending_exit_intents.pop(symbol, None)
+                self.state.add_order(
+                    OrderView(
+                        order_id=submitted.order_id,
+                        symbol=symbol,
+                        side="SELL",
+                        order_type="MOO",
+                        quantity=quantity,
+                        status=submitted.status,
+                        reference=reference,
+                    )
+                )
+                self.state.save_runtime()
+                self.state.log(
+                    f"{symbol}: {quantity}-share next-open sell submitted",
+                    "SUCCESS",
+                )
+                self._track_order_task(
+                    submitted.order_id,
+                    self._watch_exit_fill(symbol, submitted.trade),
+                )
+            except Exception as exc:
+                self.state.log(
+                    f"URGENT: {symbol} next-open exit submission failed; retrying: {exc}",
+                    "ERROR",
+                )
 
     def _track_order_task(self, order_id: int, coroutine: Any) -> None:
         if order_id in self._watched_order_ids:

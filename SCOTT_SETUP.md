@@ -10,7 +10,7 @@ and opens only an outbound encrypted link. Port `7497` is never exposed publicly
 Download the latest release:
 <https://github.com/rivnefurniture-lab/ibkr-half-day-reversal/releases/latest>
 
-- **Already installed:** replace the old app with version `1.2.5`, then open it normally. The new
+- **Already installed:** replace the old app with version `1.2.6`, then open it normally. The new
   connector keeps the saved keys and automatically repairs an older connector left running in the
   background.
 - **Windows:** run `Half-Day-Reversal-Setup-Windows.exe`.
@@ -40,7 +40,7 @@ until paper testing is signed off. Click **Save and open dashboard**.
 
 The keys are stored privately in Scott's user application-data folder. They are not uploaded to
 GitHub or Railway. The dashboard opens already authenticated, so the keys are entered only once.
-The running screen must show **Connector version 1.2.5**.
+The running screen must show **Connector version 1.2.6**.
 
 ## 3. Configure TWS Paper
 

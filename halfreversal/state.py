@@ -39,6 +39,7 @@ class RuntimeState:
         self.orders: list[OrderView] = []
         self.logs: deque[LogView] = deque(maxlen=300)
         self.pending_entries: dict[int, dict[str, object]] = {}
+        self.pending_exit_intents: dict[str, dict[str, object]] = {}
         self.pending_exit_order_ids: set[int] = set()
         self._load_runtime()
         self._configure_file_logger()
@@ -68,6 +69,7 @@ class RuntimeState:
                 int(order_id): entry
                 for order_id, entry in payload.get("pending_entries", {}).items()
             }
+            self.pending_exit_intents = payload.get("pending_exit_intents", {})
             self.pending_exit_order_ids = set(payload.get("pending_exit_order_ids", []))
         except (OSError, ValueError, TypeError):
             pass
@@ -79,6 +81,7 @@ class RuntimeState:
                 {
                     "last_execution_date": self.last_execution_date,
                     "pending_entries": self.pending_entries,
+                    "pending_exit_intents": self.pending_exit_intents,
                     "pending_exit_order_ids": sorted(self.pending_exit_order_ids),
                 },
             )

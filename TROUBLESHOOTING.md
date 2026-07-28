@@ -150,3 +150,16 @@
   project version.
 - **Cause:** The root package version is recorded in the lockfile.
 - **Fix:** Run `uv lock`, then rerun the complete compile, lint, and test checks.
+
+## MOO exits are cancelled immediately after the closing fill
+
+- **Error:** IBKR paper fills the MOC entries, then cancels or rejects most `MKT`/`OPG` exits with
+  `At the open order can not be executed` or `Exchange is closed`.
+- **Cause:** An opening order sent during the closing-auction transition can be interpreted as an
+  order for the session that is ending instead of the next session. Adding `goodAfterTime` can pass
+  an IBKR what-if check but the paper exchange still rejects the transmitted order after hours.
+- **Fix:** Persist an exit intention as soon as the MOC fill arrives. At 8:00 AM US/Eastern on the
+  next NYSE session, submit the real `MKT`/`OPG` order and retain failed intentions for one-minute
+  retries. Reject false-success results when IBKR immediately marks an exit `Cancelled`,
+  `ApiCancelled`, or `Inactive`. If an accepted opening exit is later cancelled or only partially
+  filled, persist its remaining quantity and retry before the open or at the following session.

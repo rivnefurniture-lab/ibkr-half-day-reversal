@@ -35,7 +35,12 @@ class LifecycleBroker:
         trade = fake_trade(101, status="Filled", filled=quantity, reference=reference)
         return SubmittedOrder(101, "Filled", trade)  # type: ignore[arg-type]
 
-    async def place_moo(self, symbol: str, quantity: int, reference: str) -> SubmittedOrder:
+    async def place_moo(
+        self,
+        symbol: str,
+        quantity: int,
+        reference: str,
+    ) -> SubmittedOrder:
         self.exit_calls.append((symbol, quantity, reference))
         trade = fake_trade(202, status="Submitted", filled=0, reference=reference)
         return SubmittedOrder(202, "Submitted", trade)  # type: ignore[arg-type]
@@ -83,14 +88,43 @@ async def test_filled_moc_automatically_queues_next_open_exit(tmp_path) -> None:
 
     assert submitted == 1
     assert broker.entry_calls[0][:2] == ("SPY", 1)
+    assert broker.exit_calls == []
+    assert service.state.pending_entries == {}
+    assert service.state.pending_exit_intents["SPY"]["quantity"] == 1
+    service.state.pending_exit_intents["SPY"]["submit_at"] = (
+        now - timedelta(minutes=1)
+    ).isoformat()
+
+    await service._submit_due_exit_intents(now)
+
     assert broker.exit_calls[0][:2] == ("SPY", 1)
     assert broker.exit_calls[0][2].endswith("-EXIT")
     assert [(order.side, order.order_type) for order in service.state.orders] == [
         ("SELL", "MOO"),
         ("BUY", "MOC"),
     ]
-    assert service.state.pending_entries == {}
+    assert service.state.pending_exit_intents == {}
     assert service.state.pending_exit_order_ids == {202}
+    await service.stop()
+
+
+@pytest.mark.asyncio
+async def test_cancelled_next_open_exit_remains_scheduled(tmp_path) -> None:
+    service = TradingService(tmp_path, data_dir=tmp_path / "data")
+    trade = fake_trade(
+        202,
+        status="Cancelled",
+        filled=1,
+        reference="HDR-2026-07-28-EXIT",
+    )
+    trade.order.totalQuantity = 3
+    service.state.pending_exit_order_ids.add(202)
+
+    await service._watch_exit_fill("SPY", trade)  # type: ignore[arg-type]
+
+    assert service.state.pending_exit_order_ids == set()
+    assert service.state.pending_exit_intents["SPY"]["quantity"] == 2
+    assert service.state.pending_exit_intents["SPY"]["entry_reference"] == "HDR-2026-07-28"
     await service.stop()
 
 

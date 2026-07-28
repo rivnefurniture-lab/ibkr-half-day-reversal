@@ -1,6 +1,6 @@
 [project]
 name = "ibkr-half-day-reversal"
-version = "1.2.5"
+version = "1.2.6"
 description = "Local IBKR dashboard for the half-day reversal strategy"
 requires-python = ">=3.11"
 dependencies = [

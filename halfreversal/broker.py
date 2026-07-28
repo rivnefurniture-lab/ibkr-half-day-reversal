@@ -165,7 +165,12 @@ class IBKRBroker:
         await asyncio.sleep(0.2)
         return SubmittedOrder(trade.order.orderId, trade.orderStatus.status, trade)
 
-    async def place_moo(self, symbol: str, quantity: int, reference: str) -> SubmittedOrder:
+    async def place_moo(
+        self,
+        symbol: str,
+        quantity: int,
+        reference: str,
+    ) -> SubmittedOrder:
         contract = await self._qualified_stock(symbol)
         order = Order(
             action="SELL",
@@ -175,7 +180,13 @@ class IBKRBroker:
             orderRef=reference,
         )
         trade = self.ib.placeOrder(contract, order)
-        await asyncio.sleep(0.2)
+        await asyncio.sleep(0.5)
+        if trade.orderStatus.status in {"Cancelled", "ApiCancelled", "Inactive"}:
+            reason = next(
+                (entry.message for entry in reversed(trade.log) if entry.message),
+                trade.orderStatus.status,
+            )
+            raise RuntimeError(f"IBKR rejected the next-open order: {reason}")
         return SubmittedOrder(trade.order.orderId, trade.orderStatus.status, trade)
 
     async def validate_paper_order_path(self, symbol: str = "SPY") -> dict[str, Any]:
