@@ -4,7 +4,8 @@ const state = { snapshot: null, busy: false, backtestBusy: false, hosted: false,
 const elements = {
   modeBadge: $("#modeBadge"), connectionBadge: $("#connectionBadge"), primaryStatus: $("#primaryStatus"),
   statusDetail: $("#statusDetail"), connectButton: $("#connectButton"), scanButton: $("#scanButton"),
-  armButton: $("#armButton"), executeButton: $("#executeButton"), cancelButton: $("#cancelButton"),
+  testOrderButton: $("#testOrderButton"), armButton: $("#armButton"),
+  executeButton: $("#executeButton"), cancelButton: $("#cancelButton"),
   armDot: $("#armDot"), armLabel: $("#armLabel"), nextRun: $("#nextRun"), marketStatus: $("#marketStatus"),
   netLiq: $("#netLiq"), availableFunds: $("#availableFunds"), accountLabel: $("#accountLabel"),
   universeCount: $("#universeCount"), coverageLabel: $("#coverageLabel"), selectedCount: $("#selectedCount"),
@@ -77,6 +78,7 @@ function render(snapshot) {
   elements.connectionBadge.className = `badge ${snapshot.connected ? "connected" : ""}`;
   elements.connectionBadge.innerHTML = `<i></i>${escapeHtml(snapshot.connection_label)}`;
   elements.connectButton.textContent = snapshot.connected ? "Disconnect" : "Connect IBKR";
+  elements.testOrderButton.disabled = !snapshot.connected || snapshot.mode !== "paper" || state.busy;
   elements.scanButton.disabled = !snapshot.connected || state.busy;
   elements.armButton.disabled = !snapshot.connected || state.busy;
   elements.executeButton.disabled = !snapshot.connected || !snapshot.armed || state.busy;
@@ -123,6 +125,7 @@ function renderConnectorOffline() {
   elements.primaryStatus.textContent = "Start the desktop connector";
   elements.statusDetail.textContent = "Open the Half-Day Reversal Connector on the same computer as TWS. This page will reconnect automatically.";
   elements.connectButton.disabled = true;
+  elements.testOrderButton.disabled = true;
   elements.scanButton.disabled = true;
   elements.armButton.disabled = true;
   elements.executeButton.disabled = true;
@@ -285,6 +288,13 @@ async function initialize() {
 elements.connectButton.addEventListener("click", () => {
   if (!state.snapshot) return;
   withBusy(() => api(state.snapshot.connected ? "/api/disconnect" : "/api/connect", { method: "POST" }), state.snapshot.connected ? "Disconnected" : "IBKR connected");
+});
+elements.testOrderButton.addEventListener("click", async () => {
+  if (!confirm("Run a one-share SPY MOC what-if through IBKR Paper? This validates the order path but does not transmit an order.")) return;
+  await withBusy(
+    () => api("/api/paper-order-test", { method: "POST" }),
+    "Paper order path passed — no order was transmitted",
+  );
 });
 elements.scanButton.addEventListener("click", () => withBusy(() => api("/api/scan?execute=false", { method: "POST" }), "Preview scan complete"));
 elements.executeButton.addEventListener("click", () => withBusy(() => api("/api/scan?execute=true", { method: "POST" }), "Execution run submitted"));

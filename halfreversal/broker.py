@@ -174,6 +174,27 @@ class IBKRBroker:
         await asyncio.sleep(0.2)
         return SubmittedOrder(trade.order.orderId, trade.orderStatus.status, trade)
 
+    async def validate_paper_order_path(self, symbol: str = "SPY") -> dict[str, Any]:
+        if not self.connected:
+            raise RuntimeError("IBKR is not connected")
+        contract = await self._qualified_stock(symbol)
+        order = Order(
+            action="BUY",
+            orderType="MOC",
+            totalQuantity=1,
+            tif="DAY",
+            orderRef="HDR-SELFTEST",
+        )
+        order_state = await self.ib.whatIfOrderAsync(contract, order)
+        return {
+            "symbol": symbol,
+            "order_type": "MOC",
+            "quantity": 1,
+            "status": order_state.status or "Accepted",
+            "warning": (order_state.warningText or "").strip(),
+            "transmitted": False,
+        }
+
     async def cancel_strategy_orders(self, reference_prefix: str) -> int:
         cancelled = 0
         for trade in self.ib.openTrades():

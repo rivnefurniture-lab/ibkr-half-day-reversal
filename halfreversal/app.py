@@ -35,7 +35,7 @@ async def lifespan(_: FastAPI):
     await service.stop()
 
 
-APP_VERSION = "1.2.2"
+APP_VERSION = "1.2.3"
 app = FastAPI(title="Half-Day Reversal Control", version=APP_VERSION, lifespan=lifespan)
 
 
@@ -92,6 +92,11 @@ async def run_scan(execute: bool = Query(default=False)) -> dict:
 @app.post("/api/cancel")
 async def cancel_orders() -> dict[str, int]:
     return await _handle(service.cancel_strategy_orders())
+
+
+@app.post("/api/paper-order-test")
+async def paper_order_test() -> dict:
+    return await _handle(service.validate_paper_order_path())
 
 
 @app.post("/api/backtest/estimate", response_model=BacktestEstimate)

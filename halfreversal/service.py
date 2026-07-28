@@ -177,6 +177,22 @@ class TradingService:
         self.state.log(f"Cancellation requested for {count} open strategy order(s)", "WARNING")
         return {"cancelled": count}
 
+    async def validate_paper_order_path(self) -> dict[str, Any]:
+        if not self.broker.connected:
+            raise RuntimeError("Connect IBKR before running the paper order test")
+        if self.state.config.mode != TradingMode.PAPER:
+            raise RuntimeError("The order-path test is available only in IBKR paper mode")
+        result = await self.broker.validate_paper_order_path()
+        self.state.log(
+            "Paper order path passed: IBKR accepted a one-share SPY MOC what-if. "
+            "No order was transmitted.",
+            "SUCCESS",
+        )
+        return {
+            **result,
+            "message": "Paper order path passed. IBKR accepted the MOC what-if; no order was sent.",
+        }
+
     async def estimate_backtest(self, request: BacktestRequest) -> BacktestEstimate:
         return await self.backtester.estimate(request, self.state.config)
 

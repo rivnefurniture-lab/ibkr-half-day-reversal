@@ -83,6 +83,24 @@
   If it finds an older local process whose relay is offline, it starts the corrected secure bridge,
   writes persistent diagnostics, and takes over the local service if the old process later exits.
 
+## TWS is open but every API connection is refused
+
+- **Error:** The connector reaches Railway, but `127.0.0.1:7497` has no listener and Connect IBKR
+  fails immediately.
+- **Cause:** TWS may show port 7497 and Read-Only API off while **Enable ActiveX and Socket
+  Clients** is still unchecked. In the saved TWS configuration this appears as
+  `socketClient="false"`.
+- **Fix:** In Paper TWS open **Global Configuration -> API -> Settings**, enable ActiveX and Socket
+  Clients, keep localhost-only enabled, keep port 7497, apply, and restart TWS.
+
+## Broker account-mode tests unexpectedly skip validation
+
+- **Error:** Tests expecting paper/live account mismatch errors report that no exception was raised.
+- **Cause:** The test double began in an already-connected state, so the broker correctly returned
+  its existing connection before running a new-login validation path.
+- **Fix:** Initialize connection-test doubles as disconnected; use connected doubles only for order
+  construction and lifecycle tests.
+
 ## Railway polling loop fails in zsh
 
 - **Error:** `zsh: read-only variable: status`.
