@@ -31,7 +31,8 @@ ISHARES_IJH_HOLDINGS_URL = (
     "https://www.ishares.com/us/products/239763/"
     "ishares-core-s-p-mid-cap-etf/latest-holdings.csv"
 )
-DATABENTO_SYMBOL_ALIASES = {"MOGA": "MOG.A"}
+ISHARES_SYMBOL_ALIASES = {"MOGA": "MOG A"}
+DATABENTO_SYMBOL_ALIASES = {"MOGA": "MOG.A", "MOG A": "MOG.A"}
 
 
 class DatabentoBacktester:
@@ -151,8 +152,12 @@ def parse_ishares_midcap_holdings(text: str) -> MidcapUniverse:
     symbols = []
     for row in csv.DictReader(io.StringIO("\n".join(lines[header_index:]))):
         ticker = (row.get("Ticker") or "").strip().upper()
+        ticker = ISHARES_SYMBOL_ALIASES.get(ticker, ticker)
         asset_class = (row.get("Asset Class") or "").strip()
-        if asset_class == "Equity" and re.fullmatch(r"[A-Z][A-Z0-9-]*", ticker):
+        if asset_class == "Equity" and re.fullmatch(
+            r"[A-Z][A-Z0-9-]*(?: [A-Z])?",
+            ticker,
+        ):
             symbols.append(ticker)
     symbols = list(dict.fromkeys(symbols))
     if len(symbols) < 350:

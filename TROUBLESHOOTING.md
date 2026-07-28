@@ -134,3 +134,19 @@
   though the app bundle and signing steps completed successfully.
 - **Fix:** Re-run the failed workflow jobs. Confirm both Mac artifacts build successfully on the
   clean runners before publishing or sharing the release.
+
+## Current IJH universe crashes while qualifying `MOGA`
+
+- **Error:** A full mid-cap scan logs `No security definition ... MOGA` and then fails with
+  `AttributeError: 'NoneType' object has no attribute 'symbol'`.
+- **Cause:** iShares publishes Moog Class A as `MOGA`, IBKR expects `MOG A`, and IBKR includes a
+  `None` placeholder when one contract in a batch cannot be qualified.
+- **Fix:** Normalize `MOGA` to `MOG A` when loading IJH holdings, map either form to `MOG.A` for
+  Databento, and defensively discard unqualified placeholders before processing quote batches.
+
+## Version bump leaves `uv.lock` stale
+
+- **Error:** `uv lock --check` reports that `uv.lock` needs to be updated after changing the
+  project version.
+- **Cause:** The root package version is recorded in the lockfile.
+- **Fix:** Run `uv lock`, then rerun the complete compile, lint, and test checks.

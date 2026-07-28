@@ -112,7 +112,11 @@ class IBKRBroker:
         for offset in range(0, len(symbols), batch_size):
             batch = symbols[offset : offset + batch_size]
             contracts = [Stock(symbol, "SMART", "USD") for symbol in batch]
-            qualified = await self.ib.qualifyContractsAsync(*contracts)
+            qualified = [
+                contract
+                for contract in await self.ib.qualifyContractsAsync(*contracts)
+                if contract is not None
+            ]
             qualified_by_symbol = {contract.symbol: contract for contract in qualified}
             missing = [symbol for symbol in batch if symbol not in qualified_by_symbol]
             results.extend(Quote(symbol=symbol, error="Contract not found") for symbol in missing)

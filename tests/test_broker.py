@@ -197,3 +197,36 @@ async def test_cancellation_protects_exit_and_unrelated_orders() -> None:
 
     assert cancelled == 1
     assert fake_ib.cancelled == [entry]
+
+
+@pytest.mark.asyncio
+async def test_quotes_skip_unqualified_contracts_without_crashing() -> None:
+    class QuoteFakeIB(FakeIB):
+        async def qualifyContractsAsync(
+            self,
+            *contracts: Stock,
+        ) -> list[Stock | None]:
+            return [
+                contract if contract.symbol == "AAPL" else None
+                for contract in contracts
+            ]
+
+        async def reqTickersAsync(self, *contracts: Stock) -> list[SimpleNamespace]:
+            return [
+                SimpleNamespace(
+                    contract=contract,
+                    open=100.0,
+                    last=99.0,
+                    marketPrice=lambda: 99.0,
+                )
+                for contract in contracts
+            ]
+
+    broker = broker_with(QuoteFakeIB())
+
+    quotes = await broker.get_quotes(["AAPL", "INVALID"], batch_size=10)
+
+    assert [(quote.symbol, quote.error) for quote in quotes] == [
+        ("INVALID", "Contract not found"),
+        ("AAPL", None),
+    ]

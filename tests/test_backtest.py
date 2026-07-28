@@ -72,7 +72,11 @@ def test_backtest_request_rejects_reversed_dates() -> None:
 
 def test_parse_ishares_midcap_holdings_filters_non_equities() -> None:
     equities = "\n".join(
-        f'"S{index}","Stock {index}","EQUITY","Industrials","Equity"'
+        (
+            '"MOGA","Moog Class A","EQUITY","Industrials","Equity"'
+            if index == 0
+            else f'"S{index}","Stock {index}","EQUITY","Industrials","Equity"'
+        )
         for index in range(350)
     )
     text = (
@@ -87,3 +91,5 @@ def test_parse_ishares_midcap_holdings_filters_non_equities() -> None:
     assert universe.as_of == date(2026, 7, 20)
     assert universe.symbol_count == 350
     assert "USD" not in universe.symbols
+    assert "MOGA" not in universe.symbols
+    assert "MOG A" in universe.symbols
