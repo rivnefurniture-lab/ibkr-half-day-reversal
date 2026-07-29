@@ -169,3 +169,20 @@
 - **Error:** `zsh: read-only variable: status`.
 - **Cause:** `status` is a special read-only parameter in zsh.
 - **Fix:** Store the deployment result in a task-specific variable such as `deployment_state`.
+
+## Ruff rejects a standalone monitoring script's import layout
+
+- **Error:** `I001 Import block is un-sorted or un-formatted`.
+- **Cause:** The script did not include the blank-line separation required by the repository's
+  Ruff import-formatting rules.
+- **Fix:** Run `uv run ruff check <script> --fix`, then rerun the complete project checks.
+
+## Paper TWS closes during an overnight exit hold
+
+- **Error:** The exit scheduler repeatedly reports `Connect call failed ('127.0.0.1', 7497)` and
+  its terminal session is gone before the premarket submission.
+- **Cause:** TWS closed its paper session overnight, removing the local API listener. The stored
+  exit intentions remained safe on disk.
+- **Fix:** Reopen Trader Workstation, accept the paper-trading warning, verify port `7497`, and
+  restart the monitor against the same data directory. It reloads every pending exit without
+  duplicating the entry trades.
