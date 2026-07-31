@@ -186,3 +186,14 @@
 - **Fix:** Reopen Trader Workstation, accept the paper-trading warning, verify port `7497`, and
   restart the monitor against the same data directory. It reloads every pending exit without
   duplicating the entry trades.
+
+## A new installer still reports an older connector version
+
+- **Error:** A tagged installer and hosted dashboard say `1.2.6`, but the connector window and
+  local identity endpoint still report `1.2.4`; an older hidden connector may therefore be treated
+  as current instead of being replaced.
+- **Cause:** Runtime version strings were duplicated independently from `pyproject.toml` and the
+  installer metadata. The hosted asset-cache test also embedded the previous version literally.
+- **Fix:** Keep the runtime version in `halfreversal/version.py`, import it in every runtime
+  surface and the macOS bundle specification, and make tests compare asset URLs against that
+  shared value.

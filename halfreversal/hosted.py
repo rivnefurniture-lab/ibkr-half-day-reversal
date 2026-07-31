@@ -13,6 +13,8 @@ from fastapi import FastAPI, HTTPException, Request, WebSocket, WebSocketDisconn
 from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 
+from .version import APP_VERSION
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RESPONSE_TIMEOUT_SECONDS = 360
 
@@ -24,7 +26,7 @@ class WorkerConnection:
     send_lock: asyncio.Lock = field(default_factory=asyncio.Lock)
 
 
-app = FastAPI(title="Half-Day Reversal Hosted Relay", version="1.2.4")
+app = FastAPI(title="Half-Day Reversal Hosted Relay", version=APP_VERSION)
 worker: WorkerConnection | None = None
 worker_guard = asyncio.Lock()
 

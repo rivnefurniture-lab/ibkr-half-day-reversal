@@ -20,6 +20,7 @@ from .models import (
     TradingConfig,
 )
 from .service import TradingService
+from .version import APP_VERSION
 
 RESOURCE_ROOT = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent.parent))
 ENV_FILE = Path(os.getenv("HALFREVERSAL_ENV_FILE", RESOURCE_ROOT / ".env"))
@@ -35,7 +36,6 @@ async def lifespan(_: FastAPI):
     await service.stop()
 
 
-APP_VERSION = "1.2.4"
 app = FastAPI(title="Half-Day Reversal Control", version=APP_VERSION, lifespan=lifespan)
 
 

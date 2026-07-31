@@ -3,6 +3,8 @@ from pathlib import Path
 
 from PyInstaller.utils.hooks import collect_data_files, collect_submodules
 
+from halfreversal.version import APP_VERSION
+
 project_root = Path(SPECPATH).parent
 datas = [(str(project_root / "static"), "static")]
 datas += collect_data_files("exchange_calendars")
@@ -57,7 +59,7 @@ if sys.platform == "darwin":
         bundle_identifier="com.halfday.reversal.connector",
         info_plist={
             "CFBundleDisplayName": "Half-Day Reversal Connector",
-            "CFBundleShortVersionString": "1.2.6",
+            "CFBundleShortVersionString": APP_VERSION,
             "NSHighResolutionCapable": True,
         },
     )

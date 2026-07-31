@@ -10,7 +10,7 @@ and opens only an outbound encrypted link. Port `7497` is never exposed publicly
 Download the latest release:
 <https://github.com/rivnefurniture-lab/ibkr-half-day-reversal/releases/latest>
 
-- **Already installed:** replace the old app with version `1.2.6`, then open it normally. The new
+- **Already installed:** replace the old app with version `1.2.7`, then open it normally. The new
   connector keeps the saved keys and automatically repairs an older connector left running in the
   background.
 - **Windows:** run `Half-Day-Reversal-Setup-Windows.exe`.
@@ -40,7 +40,7 @@ until paper testing is signed off. Click **Save and open dashboard**.
 
 The keys are stored privately in Scott's user application-data folder. They are not uploaded to
 GitHub or Railway. The dashboard opens already authenticated, so the keys are entered only once.
-The running screen must show **Connector version 1.2.6**.
+The running screen must show **Connector version 1.2.7**.
 
 ## 3. Configure TWS Paper
 
@@ -59,13 +59,14 @@ Do not create firewall or router forwarding for port `7497`.
 1. In the hosted dashboard, open **Settings**.
 2. Select **IBKR paper**.
 3. Use host `127.0.0.1`, port `7497`, client ID `17`, account `DUH450551`.
-4. Set capital allocation `0.01`, maximum per position `0.01`, maximum positions `1`, and keep
-   automatic daily runs off.
-5. Save, click **Connect IBKR**, and confirm the account label ends in `0551`.
-6. Click **Test paper order path**. This asks IBKR to validate a one-share SPY MOC what-if but does
+4. Beside **Universe**, click **Use current S&P 400**.
+5. For the first safe paper cycle, set capital allocation `0.01`, maximum per position `0.01`,
+   maximum positions `1`, and keep automatic daily runs off.
+6. Save, click **Connect IBKR**, and confirm the account label ends in `0551`.
+7. Click **Test paper order path**. This asks IBKR to validate a one-share SPY MOC what-if but does
    not transmit an order. Confirm the green success message. If IBKR rejects the simulation, the
    dashboard shows the actual rejection instead of reporting a false pass.
-7. Click **Preview scan** during regular US market hours.
+8. Click **Preview scan** during regular US market hours.
 
 If quote coverage is insufficient, confirm the IBKR user has US-equity market data enabled for
 API use and shared with the paper account.
@@ -80,11 +81,16 @@ connector and send `connector.log` to Andrii. The log never contains either acce
 3. Run **Preview scan** and review the selected stock and quantity.
 4. Click **Arm session**, type `PAPER`, then click **Scan & execute**.
 5. Confirm the paper **MOC BUY** in both TWS and the dashboard.
-6. After the close, confirm a **MKT / OPG SELL** is queued for the next session.
+6. After the close, confirm the dashboard logs a next-open exit intention. At approximately
+   **8:00 AM New York time** on the next session, confirm the **MKT / OPG SELL** appears in TWS.
 7. After the next open, confirm the exit fills and the position is flat.
 
 The app blocks execution outside its pre-close window, duplicate daily runs, disarmed execution,
 and new entries while an earlier exit remains open.
+
+The one-position setting is only for the first safe paper verification. For the full 400-stock
+bottom-decile strategy, set maximum positions to `40` after sign-off and choose the total capital
+allocation deliberately before enabling automatic runs.
 
 ## 6. Run the mid-cap backtest
 

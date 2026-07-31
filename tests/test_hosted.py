@@ -4,6 +4,7 @@ import httpx
 import pytest
 
 from halfreversal.hosted import app
+from halfreversal.version import APP_VERSION
 
 
 @pytest.mark.asyncio
@@ -31,7 +32,8 @@ async def test_hosted_dashboard_disables_stale_asset_caching() -> None:
 
     assert response.status_code == 200
     assert response.headers["cache-control"] == "no-store, max-age=0"
-    assert '/static/styles.css?v=1.2.6' in response.text
-    assert '/static/app.js?v=1.2.6' in response.text
+    assert f'/static/styles.css?v={APP_VERSION}' in response.text
+    assert f'/static/app.js?v={APP_VERSION}' in response.text
     assert "Mac blocked the app?" in response.text
     assert "Open Mac Privacy &amp; Security" in response.text
+    assert 'id="loadSettingsMidcaps"' in response.text

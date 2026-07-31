@@ -400,6 +400,20 @@ elements.loadMidcaps.addEventListener("click", async () => {
   }
 });
 
+$("#loadSettingsMidcaps").addEventListener("click", async () => {
+  const button = $("#loadSettingsMidcaps");
+  button.disabled = true;
+  try {
+    const universe = await api("/api/backtest/universe/midcap");
+    $("#universe").value = universe.symbols.join("\n");
+    showToast(`Loaded ${universe.symbol_count} current S&P 400 symbols. Save settings to use them.`);
+  } catch (error) {
+    showToast(error.message, true);
+  } finally {
+    button.disabled = false;
+  }
+});
+
 elements.backtestForm.addEventListener("input", () => {
   elements.runBacktest.dataset.estimated = "";
   elements.runBacktest.disabled = true;

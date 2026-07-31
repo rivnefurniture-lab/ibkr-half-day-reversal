@@ -33,7 +33,8 @@ transmits them.
 
 ## Quick start
 
-1. Download the correct one-click installer from the latest public release:
+1. Download version `1.2.7` or newer using the correct one-click installer from the latest public
+   release:
    - `Half-Day-Reversal-Setup-Windows.exe` for Windows;
    - the `arm64.dmg` for Apple Silicon Macs;
    - the `x86_64.dmg` for Intel Macs.
@@ -42,8 +43,8 @@ transmits them.
    locked during paper testing.
 4. In TWS Paper Trading, enable socket clients on port `7497`, disable Read-Only API, and allow
    localhost.
-5. The dashboard opens already authenticated. Select **IBKR paper**, connect account `DUH450551`,
-   and run a preview.
+5. The dashboard opens already authenticated. Select **IBKR paper**, click
+   **Use current S&P 400** in Settings, connect account `DUH450551`, and run a preview.
 
 No Python, `uv`, terminal, `.env`, or script editing is required. The connector can start
 automatically with the computer. Keep TWS open while scanning, monitoring fills, or running
@@ -61,8 +62,8 @@ See [SCOTT_SETUP.md](SCOTT_SETUP.md) for the complete paper-to-live handoff.
 The research backtest is configured separately and defaults to the full bottom decile at 100%
 portfolio allocation. Live risk settings never silently change the research result.
 
-The included universe is a liquid large-cap starter list. Replace it in Settings with the intended
-research universe. The symbol list persists locally in `data/config.json`.
+Use **Use current S&P 400** in dashboard Settings to load the current iShares IJH holdings as the
+intended mid-cap proxy. Save Settings so the list persists in the connector's local strategy data.
 
 ## Market data
 
