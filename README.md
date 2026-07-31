@@ -33,7 +33,7 @@ transmits them.
 
 ## Quick start
 
-1. Download version `1.2.7` or newer using the correct one-click installer from the latest public
+1. Download version `1.2.6` using the correct one-click installer from the latest public
    release:
    - `Half-Day-Reversal-Setup-Windows.exe` for Windows;
    - the `arm64.dmg` for Apple Silicon Macs;
