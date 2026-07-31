@@ -197,3 +197,11 @@
 - **Fix:** Keep the runtime version in `halfreversal/version.py`, import it in every runtime
   surface and the macOS bundle specification, and make tests compare asset URLs against that
   shared value.
+
+## Playwright verification cannot launch Chromium
+
+- **Error:** `browserType.launch: Executable doesn't exist` during the production browser check.
+- **Cause:** The bundled Playwright package was present, but its matching Chromium binary had not
+  been downloaded on this machine.
+- **Fix:** Run the bundled Playwright CLI with its bundled Node executable to install Chromium,
+  then rerun the production page, console, and interactive-element checks.
