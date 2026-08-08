@@ -36,4 +36,5 @@ async def test_hosted_dashboard_disables_stale_asset_caching() -> None:
     assert f'/static/app.js?v={APP_VERSION}' in response.text
     assert "Mac blocked the app?" in response.text
     assert "Open Mac Privacy &amp; Security" in response.text
+    assert "installs itself into Applications" in response.text
     assert 'id="loadSettingsMidcaps"' in response.text

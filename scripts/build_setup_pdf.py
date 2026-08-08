@@ -17,12 +17,14 @@ DASHBOARD_URL = "https://half-day-reversal-production.up.railway.app"
 
 STEPS = [
     (
-        f"Download version {APP_VERSION} from the dashboard. Choose the correct Mac or Windows "
-        "button and replace any older connector."
+        f"Download version {APP_VERSION} from the dashboard again and replace the older July 31 "
+        "copy. On Mac, open the DMG and double-click the connector. It installs itself into "
+        "Applications and opens automatically."
     ),
     (
-        "If macOS blocks the first launch, open the app once, then use System Settings - "
-        "Privacy & Security - Open Anyway. This is required only once."
+        "If macOS blocks the first launch, use System Settings - Privacy & Security - Open Anyway, "
+        "then double-click the connector in the download window once more. This is required only "
+        "once."
     ),
     (
         "Open Half-Day Reversal Connector. Saved keys remain after upgrades. If setup appears, "
@@ -120,7 +122,9 @@ def build_pdf(output_path: Path = OUTPUT_PATH) -> Path:
             Spacer(1, 1.5 * mm),
             Paragraph(
                 "<b>If it does not connect:</b> click Open diagnostics in the connector and send "
-                "connector.log to Andrii. The log does not contain either access key.",
+                "connector.log to Andrii. If the setup screen cannot open, send startup-error.log "
+                "from Library/Application Support/Half-Day Reversal. The logs do not contain "
+                "either access key.",
                 note_style,
             ),
             Paragraph(

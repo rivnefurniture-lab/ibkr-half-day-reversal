@@ -1,0 +1,6 @@
+Open Half-Day Reversal Connector once.
+
+It installs itself into Applications and opens the setup screen automatically.
+
+If Apple blocks the first launch, choose Open Anyway in System Settings > Privacy & Security,
+then open the connector again.

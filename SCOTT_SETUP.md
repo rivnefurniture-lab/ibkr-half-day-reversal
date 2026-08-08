@@ -10,19 +10,23 @@ and opens only an outbound encrypted link. Port `7497` is never exposed publicly
 Download the latest release:
 <https://github.com/rivnefurniture-lab/ibkr-half-day-reversal/releases/latest>
 
-- **Already installed:** replace the old app with version `1.2.6`, then open it normally. The new
-  connector keeps the saved keys and automatically repairs an older connector left running in the
-  background.
+- **Already installed:** download version `1.2.6` again and replace the older July 31 copy. The
+  corrected connector keeps the saved keys and automatically repairs an older connector left
+  running in the background.
 - **Windows:** run `Half-Day-Reversal-Setup-Windows.exe`.
-- **Apple Silicon Mac:** open `Half-Day-Reversal-macOS-arm64.dmg`, then drag the app to
-  Applications.
-- **Intel Mac:** open `Half-Day-Reversal-macOS-x86_64.dmg`, then drag the app to Applications.
+- **Apple Silicon Mac:** open `Half-Day-Reversal-macOS-arm64.dmg`, then double-click the connector.
+- **Intel Mac:** open `Half-Day-Reversal-macOS-x86_64.dmg`, then double-click the connector.
+
+The corrected Mac download installs itself into Applications and opens the setup screen. There is
+no drag-and-drop step.
 
 On a Mac, Apple may block the first launch because this build is not notarized:
 
-1. Try to open the connector once, then close Apple's warning.
+1. Double-click the connector in the download window once, then close Apple's warning.
 2. Open **System Settings -> Privacy & Security**.
 3. Scroll to **Security**, click **Open Anyway**, and confirm.
+4. Double-click the connector in the still-open download window once more. It installs and opens
+   automatically.
 
 The dashboard's **Mac blocked the app?** button opens this screen directly. This exception is
 needed only once. Apple's instructions:
@@ -72,7 +76,9 @@ If quote coverage is insufficient, confirm the IBKR user has US-equity market da
 API use and shared with the paper account.
 
 If the connector does not become online within 30 seconds, click **Open diagnostics** in the
-connector and send `connector.log` to Andrii. The log never contains either access key.
+connector and send `connector.log` to Andrii. If the setup screen itself cannot open, send
+`startup-error.log` from `Library/Application Support/Half-Day Reversal`. Neither log contains an
+access key.
 
 ## 5. Verify one paper MOC/MOO cycle
 

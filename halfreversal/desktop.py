@@ -12,6 +12,7 @@ import subprocess
 import sys
 import threading
 import time
+import traceback
 import urllib.error
 import urllib.request
 import webbrowser
@@ -23,7 +24,7 @@ from urllib.parse import quote
 
 import certifi
 
-from .version import APP_VERSION
+from halfreversal.version import APP_VERSION
 
 DEFAULT_HOSTED_URL = "https://half-day-reversal-production.up.railway.app"
 APP_FOLDER = "Half-Day Reversal"
@@ -31,6 +32,7 @@ LOCAL_BASE_URL = "http://127.0.0.1:8765"
 LOCAL_IDENTITY_URL = f"{LOCAL_BASE_URL}/api/connector"
 LOCAL_STATUS_URL = f"{LOCAL_BASE_URL}/api/status"
 PRODUCT_ID = "half-day-reversal"
+MACOS_APP_NAME = "Half-Day Reversal Connector.app"
 
 
 @dataclass(frozen=True)
@@ -253,6 +255,98 @@ def connector_logger(data_dir: Path) -> logging.Logger:
         handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
         logger.addHandler(handler)
     return logger
+
+
+def macos_app_bundle(executable: Path | None = None) -> Path | None:
+    """Return the enclosing .app bundle for a frozen macOS executable."""
+    current = executable or Path(sys.executable)
+    for candidate in (current, *current.parents):
+        if candidate.suffix == ".app":
+            return candidate
+    return None
+
+
+def macos_app_needs_install(bundle: Path) -> bool:
+    location = str(bundle)
+    return location.startswith("/Volumes/") or "/AppTranslocation/" in location
+
+
+def install_macos_app(source: Path, applications_dir: Path) -> Path:
+    """Copy the connector to an Applications folder and return the installed bundle."""
+    applications_dir.mkdir(parents=True, exist_ok=True)
+    target = applications_dir / MACOS_APP_NAME
+    subprocess.run(
+        ["/usr/bin/ditto", "--rsrc", "--extattr", str(source), str(target)],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return target
+
+
+def install_and_relaunch_macos(logger: logging.Logger) -> bool:
+    """Turn a direct DMG launch into a normal installed launch."""
+    if sys.platform != "darwin" or not getattr(sys, "frozen", False):
+        return False
+
+    source = macos_app_bundle()
+    if source is None or not macos_app_needs_install(source):
+        return False
+
+    logger.info("Connector launched from a disk image; installing from %s", source)
+    attempts = (Path("/Applications"), Path.home() / "Applications")
+    errors: list[str] = []
+    for applications_dir in attempts:
+        try:
+            target = install_macos_app(source, applications_dir)
+            subprocess.Popen(
+                ["/usr/bin/open", "-n", str(target)],
+                start_new_session=True,
+            )
+            logger.info("Installed connector at %s and requested relaunch", target)
+            return True
+        except (OSError, subprocess.SubprocessError) as exc:
+            errors.append(f"{applications_dir}: {exc}")
+            logger.exception("Could not install connector in %s", applications_dir)
+
+    raise RuntimeError("Could not install the connector: " + "; ".join(errors))
+
+
+def write_startup_error(exc: BaseException) -> Path:
+    data_dir = user_data_dir()
+    data_dir.mkdir(parents=True, exist_ok=True)
+    path = data_dir / "startup-error.log"
+    details = "".join(traceback.format_exception(type(exc), exc, exc.__traceback__))
+    path.write_text(
+        f"Half-Day Reversal Connector v{APP_VERSION}\n"
+        f"Platform: {platform.platform()} ({platform.machine()})\n"
+        f"Executable: {sys.executable}\n\n"
+        f"{details}",
+        encoding="utf-8",
+    )
+    return path
+
+
+def show_native_startup_error(path: Path) -> None:
+    message = (
+        "Half-Day Reversal Connector could not start. "
+        f"Please send this diagnostic file to Andrii: {path}"
+    )
+    if sys.platform == "darwin":
+        script = (
+            "on run argv\n"
+            "display dialog (item 1 of argv) with title \"Half-Day Reversal Connector\" "
+            "buttons {\"OK\"} default button \"OK\" with icon stop\n"
+            "end run"
+        )
+        subprocess.run(
+            ["/usr/bin/osascript", "-e", script, message],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        return
+    print(message, file=sys.stderr)
 
 
 class DesktopApp:
@@ -631,7 +725,21 @@ class DesktopApp:
 
 
 def main() -> None:
-    DesktopApp(background="--background" in sys.argv).run()
+    logger = connector_logger(user_data_dir())
+    try:
+        if "--verify-package" in sys.argv:
+            logger.info("Connector package verification passed")
+            return
+        if install_and_relaunch_macos(logger):
+            return
+        DesktopApp(background="--background" in sys.argv).run()
+    except Exception as exc:
+        logger.exception("Connector failed during startup")
+        try:
+            path = write_startup_error(exc)
+            show_native_startup_error(path)
+        except Exception:
+            logger.exception("Could not write or display the startup diagnostic")
 
 
 if __name__ == "__main__":

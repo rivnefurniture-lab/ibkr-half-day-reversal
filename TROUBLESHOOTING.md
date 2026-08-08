@@ -45,6 +45,17 @@
 - **Fix:** Use absolute `halfreversal.*` imports and explicitly collect the package submodules in
   the PyInstaller specification.
 
+## Frozen Mac connector closes before showing a window
+
+- **Error:** Opening the Mac app makes it disappear immediately; direct execution reports
+  `ImportError: attempted relative import with no known parent package`.
+- **Cause:** The PyInstaller entrypoint is executed as a standalone script. A later shared-version
+  refactor reintroduced `from .version import APP_VERSION`, so Python failed before startup logging
+  or the Tk window could initialize.
+- **Fix:** Keep every entrypoint import absolute, including
+  `from halfreversal.version import APP_VERSION`, then run the built executable itself as part of
+  release verification rather than treating a successful PyInstaller build as sufficient.
+
 ## macOS blocks the connector on first launch
 
 - **Error:** macOS says Apple cannot verify that Half-Day Reversal Connector is free of malicious
