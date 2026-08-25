@@ -38,3 +38,4 @@ async def test_hosted_dashboard_disables_stale_asset_caching() -> None:
     assert "Open Mac Privacy &amp; Security" in response.text
     assert "installs itself into Applications" in response.text
     assert 'id="loadSettingsMidcaps"' in response.text
+    assert "Use current S&amp;P 600 for live scans" in response.text

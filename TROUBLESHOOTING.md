@@ -1,5 +1,12 @@
 # Troubleshooting
 
+## Ruff rejects a combined import after adding a test
+
+- **Error:** `I001 Import block is un-sorted` and `E501 Line too long` in a test module.
+- **Cause:** Several imported names were added on one line, exceeding the configured 100-character
+  limit.
+- **Fix:** Format the import as a parenthesized multi-line import, then rerun Ruff and the tests.
+
 ## `python` command is unavailable on macOS
 
 - **Error:** `zsh: command not found: python` while running project checks.

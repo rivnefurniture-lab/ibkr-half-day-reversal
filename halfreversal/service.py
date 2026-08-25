@@ -202,10 +202,10 @@ class TradingService:
         async with self._backtest_lock:
             return await self.backtester.run(request, self.state.config)
 
-    async def load_midcap_universe(self) -> MidcapUniverse:
-        universe = await self.backtester.load_midcap_universe()
+    async def load_midcap_universe(self, index: str = "smallcap600") -> MidcapUniverse:
+        universe = await self.backtester.load_midcap_universe(index)
         self.state.log(
-            f"Loaded {universe.symbol_count} mid-cap symbols from {universe.source}",
+            f"Loaded {universe.symbol_count} symbols from {universe.source}",
             "SUCCESS",
         )
         return universe

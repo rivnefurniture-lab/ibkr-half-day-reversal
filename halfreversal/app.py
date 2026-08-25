@@ -110,8 +110,8 @@ async def run_backtest(request: BacktestRequest) -> BacktestResult:
 
 
 @app.get("/api/backtest/universe/midcap", response_model=MidcapUniverse)
-async def load_midcap_universe() -> MidcapUniverse:
-    return await _handle(service.load_midcap_universe())
+async def load_midcap_universe(index: str = "smallcap600") -> MidcapUniverse:
+    return await _handle(service.load_midcap_universe(index))
 
 
 @app.get("/api/logs/download")

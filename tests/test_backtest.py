@@ -5,7 +5,11 @@ from datetime import date
 import pandas as pd
 import pytest
 
-from halfreversal.backtest import calculate_backtest, parse_ishares_midcap_holdings
+from halfreversal.backtest import (
+    DatabentoBacktester,
+    calculate_backtest,
+    parse_ishares_midcap_holdings,
+)
 from halfreversal.models import BacktestEstimate, BacktestRequest
 
 
@@ -93,3 +97,8 @@ def test_parse_ishares_midcap_holdings_filters_non_equities() -> None:
     assert "USD" not in universe.symbols
     assert "MOGA" not in universe.symbols
     assert "MOG A" in universe.symbols
+
+
+def test_unknown_index_universe_is_rejected() -> None:
+    with pytest.raises(ValueError, match="Unsupported index universe"):
+        DatabentoBacktester._load_midcap_universe_sync("unknown")

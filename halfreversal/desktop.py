@@ -75,6 +75,36 @@ def validate_settings(settings: DesktopSettings) -> None:
         raise ValueError("Enter the Databento API key")
 
 
+def verify_bridge_token(hosted_url: str, token: str, timeout: float = 8.0) -> tuple[bool, str]:
+    """Ask the relay whether this access key is the right one, before we save it.
+
+    The relay checks the key before it checks whether a connector is online, so:
+      401 -> the key is definitely wrong
+      503 -> the key is correct, it is just reporting "no connector yet" (expected here)
+    Anything else, including no internet, is treated as "cannot tell" so a user
+    who is temporarily offline is never blocked from saving.
+
+    Without this, a truncated or stale key saves happily and the connector then
+    sits on "offline" forever with no hint that the key is the problem.
+    """
+    address = f"{hosted_url.rstrip('/')}/api/status"
+    request = urllib.request.Request(address, headers={"Authorization": f"Bearer {token}"})
+    context = ssl.create_default_context(cafile=certifi.where())
+    try:
+        with urllib.request.urlopen(request, timeout=timeout, context=context):
+            return True, ""
+    except urllib.error.HTTPError as exc:
+        if exc.code == 401:
+            return False, (
+                "The hosted dashboard rejected this access key.\n\n"
+                "Copy the key again and paste it in full - it is easy to miss "
+                "characters at the end when copying."
+            )
+        return True, ""  # 503 = key accepted, connector simply not running yet
+    except Exception:
+        return True, ""  # offline or DNS issue - do not block saving
+
+
 def load_settings(path: Path) -> DesktopSettings | None:
     if not path.exists():
         return None
@@ -484,6 +514,17 @@ class DesktopApp:
             start_with_computer=self.startup_var.get(),
             allow_live_trading=self.live_var.get(),
         )
+        try:
+            validate_settings(settings)
+        except ValueError as exc:
+            messagebox.showerror("Could not save setup", str(exc), parent=self.root)
+            return
+
+        accepted, reason = verify_bridge_token(settings.hosted_url, settings.bridge_token)
+        if not accepted:
+            messagebox.showerror("Access key rejected", reason, parent=self.root)
+            return
+
         try:
             save_settings(self.settings_path, settings)
             configure_startup(settings.start_with_computer, self.data_dir)

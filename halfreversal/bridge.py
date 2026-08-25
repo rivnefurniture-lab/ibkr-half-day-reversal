@@ -84,8 +84,16 @@ async def run_connector(status_callback: StatusCallback | None = None) -> None:
             raise
         except Exception as exc:
             detail = type(exc).__name__
-            if "CERTIFICATE_VERIFY_FAILED" in str(exc):
+            text = str(exc)
+            # The relay rejects a bad key by closing before the WebSocket handshake
+            # completes, which Starlette turns into HTTP 403. Without this branch the
+            # user only ever sees "InvalidStatus", which says nothing about the cause.
+            if "HTTP 403" in text or "HTTP 401" in text:
+                detail = "access key rejected - click Change keys and paste the key again"
+            elif "CERTIFICATE_VERIFY_FAILED" in text:
                 detail = "secure connection failed - install the latest connector"
+            elif "HTTP 404" in text:
+                detail = "dashboard address not found - check the hosted URL in Change keys"
             message = f"Connector offline ({detail}). Retrying in {retry_seconds}s."
             print(f"{message} ({exc})")
             if status_callback:

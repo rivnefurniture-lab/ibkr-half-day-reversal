@@ -6,12 +6,14 @@ import io
 import math
 import os
 import re
+import ssl
 import urllib.request
 from collections.abc import Callable
 from datetime import date, datetime, time
 from typing import Any
 from zoneinfo import ZoneInfo
 
+import certifi
 import databento as db
 import pandas as pd
 
@@ -31,6 +33,15 @@ ISHARES_IJH_HOLDINGS_URL = (
     "https://www.ishares.com/us/products/239763/"
     "ishares-core-s-p-mid-cap-etf/latest-holdings.csv"
 )
+ISHARES_IJR_HOLDINGS_URL = (
+    "https://www.ishares.com/us/products/239774/"
+    "ishares-core-sp-smallcap-etf/latest-holdings.csv"
+)
+# Keyed by the value the dashboard sends; both files share the same layout.
+INDEX_SOURCES = {
+    "midcap400": (ISHARES_IJH_HOLDINGS_URL, "iShares IJH (tracks S&P MidCap 400)"),
+    "smallcap600": (ISHARES_IJR_HOLDINGS_URL, "iShares IJR (tracks S&P SmallCap 600)"),
+}
 ISHARES_SYMBOL_ALIASES = {"MOGA": "MOG A"}
 DATABENTO_SYMBOL_ALIASES = {"MOGA": "MOG.A", "MOG A": "MOG.A"}
 
@@ -74,8 +85,8 @@ class DatabentoBacktester:
         )
         return result
 
-    async def load_midcap_universe(self) -> MidcapUniverse:
-        return await asyncio.to_thread(self._load_midcap_universe_sync)
+    async def load_midcap_universe(self, index: str = "smallcap600") -> MidcapUniverse:
+        return await asyncio.to_thread(self._load_midcap_universe_sync, index)
 
     @staticmethod
     def _client() -> db.Historical:
@@ -124,17 +135,26 @@ class DatabentoBacktester:
             raise RuntimeError(f"Databento historical download failed: {exc}") from exc
 
     @staticmethod
-    def _load_midcap_universe_sync() -> MidcapUniverse:
+    def _load_midcap_universe_sync(index: str = "smallcap600") -> MidcapUniverse:
+        try:
+            url, source = INDEX_SOURCES[index]
+        except KeyError as exc:
+            raise ValueError(f"Unsupported index universe: {index}") from exc
         request = urllib.request.Request(
-            ISHARES_IJH_HOLDINGS_URL,
+            url,
             headers={"User-Agent": "Half-Day-Reversal/0.1"},
         )
+        # The packaged Mac app ships no system CA bundle, so the default context
+        # fails with CERTIFICATE_VERIFY_FAILED. certifi is what the rest of the
+        # app already uses for exactly this reason.
+        context = ssl.create_default_context(cafile=certifi.where())
         try:
-            with urllib.request.urlopen(request, timeout=15) as response:
+            with urllib.request.urlopen(request, timeout=25, context=context) as response:
                 text = response.read().decode("utf-8-sig")
         except Exception as exc:
-            raise RuntimeError(f"Could not load the current mid-cap holdings: {exc}") from exc
-        return parse_ishares_midcap_holdings(text)
+            raise RuntimeError(f"Could not load the current holdings: {exc}") from exc
+        universe = parse_ishares_midcap_holdings(text)
+        return universe.model_copy(update={"source": source})
 
 
 def parse_ishares_midcap_holdings(text: str) -> MidcapUniverse:

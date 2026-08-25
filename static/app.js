@@ -385,15 +385,16 @@ elements.estimateBacktest.addEventListener("click", async () => {
 
 elements.loadMidcaps.addEventListener("click", async () => {
   setBacktestBusy(true);
-  elements.backtestStatus.textContent = "Loading current mid-cap holdings…";
+  elements.backtestStatus.textContent = "Loading current index holdings…";
   try {
-    const universe = await api("/api/backtest/universe/midcap");
+    const index = $("#universeIndex").value;
+    const universe = await api(`/api/backtest/universe/midcap?index=${encodeURIComponent(index)}`);
     $("#backtestUniverse").value = universe.symbols.join("\n");
     elements.runBacktest.dataset.estimated = "";
-    elements.backtestStatus.textContent = `Loaded ${universe.symbol_count} mid-caps from ${universe.source}${universe.as_of ? ` · ${universe.as_of}` : ""}`;
-    showToast("Mid-cap universe loaded");
+    elements.backtestStatus.textContent = `Loaded ${universe.symbol_count} symbols from ${universe.source}${universe.as_of ? ` · ${universe.as_of}` : ""}`;
+    showToast("Universe loaded");
   } catch (error) {
-    elements.backtestStatus.textContent = "Could not load the mid-cap universe";
+    elements.backtestStatus.textContent = "Could not load the index universe";
     showToast(error.message, true);
   } finally {
     setBacktestBusy(false);
@@ -404,9 +405,9 @@ $("#loadSettingsMidcaps").addEventListener("click", async () => {
   const button = $("#loadSettingsMidcaps");
   button.disabled = true;
   try {
-    const universe = await api("/api/backtest/universe/midcap");
+    const universe = await api("/api/backtest/universe/midcap?index=smallcap600");
     $("#universe").value = universe.symbols.join("\n");
-    showToast(`Loaded ${universe.symbol_count} current S&P 400 symbols. Save settings to use them.`);
+    showToast(`Loaded ${universe.symbol_count} current S&P 600 symbols. Save settings to use them for live scans.`);
   } catch (error) {
     showToast(error.message, true);
   } finally {
