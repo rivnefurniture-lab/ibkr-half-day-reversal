@@ -13,6 +13,8 @@ from fastapi import FastAPI, HTTPException, Request, WebSocket, WebSocketDisconn
 from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 
+from .backtest import load_index_universe
+from .models import MidcapUniverse
 from .version import APP_VERSION
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -54,6 +56,18 @@ async def health() -> dict[str, bool]:
 @app.get("/host/config")
 async def host_config() -> dict[str, bool]:
     return {"hosted": True, "worker_connected": worker is not None}
+
+
+@app.get("/host/universe", response_model=MidcapUniverse)
+async def host_universe(request: Request, index: str = "smallcap600") -> MidcapUniverse:
+    """Load public index holdings without requiring a connector upgrade."""
+    _require_browser_token(request)
+    try:
+        return await load_index_universe(index)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except RuntimeError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
 
 
 @app.websocket("/bridge/ws")

@@ -10,9 +10,10 @@ and opens only an outbound encrypted link. Port `7497` is never exposed publicly
 Download the latest release:
 <https://github.com/rivnefurniture-lab/ibkr-half-day-reversal/releases/latest>
 
-- **Already installed:** download version `1.2.7` and replace the older copy. The
-  corrected connector keeps the saved keys and automatically repairs an older connector left
-  running in the background.
+- **Already installed and online:** keep the working connector. Universe updates are loaded by
+  the hosted dashboard and do not require reinstalling the app.
+- **Reinstall only for connector recovery:** download version `1.2.7`; it keeps the saved keys and
+  automatically repairs an older connector left running in the background.
 - **Windows:** run `Half-Day-Reversal-Setup-Windows.exe`.
 - **Apple Silicon Mac:** open `Half-Day-Reversal-macOS-arm64.dmg`, then double-click the connector.
 - **Intel Mac:** open `Half-Day-Reversal-macOS-x86_64.dmg`, then double-click the connector.
@@ -44,7 +45,8 @@ until paper testing is signed off. Click **Save and open dashboard**.
 
 The keys are stored privately in Scott's user application-data folder. They are not uploaded to
 GitHub or Railway. The dashboard opens already authenticated, so the keys are entered only once.
-The running screen must show **Connector version 1.2.7**.
+Version `1.2.6` remains compatible with hosted universe updates. A new installation or recovery
+should show **Connector version 1.2.7**.
 
 ## 3. Configure TWS Paper
 

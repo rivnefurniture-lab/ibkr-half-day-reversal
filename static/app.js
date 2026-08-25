@@ -38,6 +38,13 @@ async function api(path, options = {}) {
   return payload;
 }
 
+function loadIndexUniverse(index) {
+  const path = state.hosted
+    ? `/host/universe?index=${encodeURIComponent(index)}`
+    : `/api/backtest/universe/midcap?index=${encodeURIComponent(index)}`;
+  return api(path);
+}
+
 function showAccessDialog(message = "") {
   $("#accessError").textContent = message;
   $("#accessError").classList.toggle("hidden", !message);
@@ -388,7 +395,7 @@ elements.loadMidcaps.addEventListener("click", async () => {
   elements.backtestStatus.textContent = "Loading current index holdings…";
   try {
     const index = $("#universeIndex").value;
-    const universe = await api(`/api/backtest/universe/midcap?index=${encodeURIComponent(index)}`);
+    const universe = await loadIndexUniverse(index);
     $("#backtestUniverse").value = universe.symbols.join("\n");
     elements.runBacktest.dataset.estimated = "";
     elements.backtestStatus.textContent = `Loaded ${universe.symbol_count} symbols from ${universe.source}${universe.as_of ? ` · ${universe.as_of}` : ""}`;
@@ -405,7 +412,7 @@ $("#loadSettingsMidcaps").addEventListener("click", async () => {
   const button = $("#loadSettingsMidcaps");
   button.disabled = true;
   try {
-    const universe = await api("/api/backtest/universe/midcap?index=smallcap600");
+    const universe = await loadIndexUniverse("smallcap600");
     $("#universe").value = universe.symbols.join("\n");
     showToast(`Loaded ${universe.symbol_count} current S&P 600 symbols. Save settings to use them for live scans.`);
   } catch (error) {
