@@ -1,5 +1,13 @@
 # Troubleshooting
 
+## Backtest cost estimate returns 422 and stays locked
+
+- **Error:** The dashboard shows `Estimate failed`, and Railway logs
+  `POST /api/backtest/estimate 422 Unprocessable Content`.
+- **Cause:** Portfolio allocation is a fraction capped at `1.00`, but `10` was entered for 10%.
+- **Fix:** Use `1.00` for 100% or `0.10` for 10%. The dashboard now validates this before the
+  request and displays the exact correction beside the backtest status.
+
 ## Ruff rejects a combined import after adding a test
 
 - **Error:** `I001 Import block is un-sorted` and `E501 Line too long` in a test module.

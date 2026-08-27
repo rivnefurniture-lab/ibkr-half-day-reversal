@@ -34,7 +34,12 @@ async function api(path, options = {}) {
   });
   const payload = await response.json().catch(() => ({}));
   if (response.status === 401 && state.hosted) showAccessDialog(payload.detail);
-  if (!response.ok) throw new Error(payload.detail || `Request failed (${response.status})`);
+  if (!response.ok) {
+    const detail = Array.isArray(payload.detail)
+      ? payload.detail.map((item) => item.msg || String(item)).join("; ")
+      : payload.detail;
+    throw new Error(detail || `Request failed (${response.status})`);
+  }
   return payload;
 }
 
@@ -184,13 +189,17 @@ function renderLogs(logs) {
 
 function backtestRequest() {
   const symbols = $("#backtestUniverse").value.split(/[\s,;]+/).filter(Boolean);
+  const capitalFraction = Number($("#backtestCapitalFraction").value);
+  if (!Number.isFinite(capitalFraction) || capitalFraction < 0.01 || capitalFraction > 1) {
+    throw new Error("Portfolio allocation must be between 0.01 and 1.00. Use 1.00 for 100% or 0.10 for 10%.");
+  }
   return {
     start_date: $("#backtestStart").value,
     end_date: $("#backtestEnd").value,
     max_cost_usd: Number($("#backtestMaxCost").value),
     transaction_cost_bps: Number($("#backtestCostBps").value),
     bottom_fraction: Number($("#backtestBottomFraction").value),
-    capital_fraction: Number($("#backtestCapitalFraction").value),
+    capital_fraction: capitalFraction,
     universe: symbols.length ? symbols : null,
   };
 }
@@ -383,7 +392,7 @@ elements.estimateBacktest.addEventListener("click", async () => {
     if (!allowed) showToast(`Estimate exceeds your $${request.max_cost_usd.toFixed(2)} download limit`, true);
   } catch (error) {
     elements.runBacktest.dataset.estimated = "";
-    elements.backtestStatus.textContent = "Estimate failed";
+    elements.backtestStatus.textContent = error.message;
     showToast(error.message, true);
   } finally {
     setBacktestBusy(false);

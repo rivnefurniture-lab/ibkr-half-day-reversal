@@ -36,14 +36,15 @@ async def test_hosted_dashboard_disables_stale_asset_caching() -> None:
 
     assert response.status_code == 200
     assert response.headers["cache-control"] == "no-store, max-age=0"
-    assert f'/static/styles.css?v={APP_VERSION}.1' in response.text
-    assert f'/static/app.js?v={APP_VERSION}.1' in response.text
+    assert f'/static/styles.css?v={APP_VERSION}.2' in response.text
+    assert f'/static/app.js?v={APP_VERSION}.2' in response.text
     assert "Mac blocked the app?" in response.text
     assert "Open Mac Privacy &amp; Security" in response.text
     assert "installs itself into Applications" in response.text
     assert 'id="loadSettingsMidcaps"' in response.text
     assert "Use current S&amp;P 600 for live scans" in response.text
     assert "Keep your existing connector" in response.text
+    assert "Use 1.00 for 100% or 0.10 for 10%." in response.text
 
 
 @pytest.mark.asyncio

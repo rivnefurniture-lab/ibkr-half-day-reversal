@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="dark" />
     <meta http-equiv="Cache-Control" content="no-store" />
     <title>Half-Day Reversal Control</title>
-    <link rel="stylesheet" href="/static/styles.css?v=1.2.7.1" />
+    <link rel="stylesheet" href="/static/styles.css?v=1.2.7.2" />
   </head>
   <body>
     <div class="shell">
@@ -139,7 +139,7 @@
             <label>Download limit (USD)<input id="backtestMaxCost" type="number" min="0" max="100" step="0.01" value="1" required /><small>The run is blocked above this limit.</small></label>
             <label>Cost each way (bps)<input id="backtestCostBps" type="number" min="0" max="100" step="0.1" value="5" required /><small>The study assumes 5 bps.</small></label>
             <label>Bottom fraction<input id="backtestBottomFraction" type="number" min="0.01" max="0.5" step="0.01" value="0.1" required /><small>0.10 selects the worst decile.</small></label>
-            <label>Portfolio allocation<input id="backtestCapitalFraction" type="number" min="0.01" max="1" step="0.01" value="1" required /><small>Research only; independent of live risk.</small></label>
+            <label>Portfolio allocation (0–1)<input id="backtestCapitalFraction" type="number" min="0.01" max="1" step="0.01" value="1" required /><small>Use 1.00 for 100% or 0.10 for 10%.</small></label>
             <label class="wide">Backtest universe<textarea id="backtestUniverse" rows="4" spellcheck="false" placeholder="Leave blank to use the universe in Settings"></textarea><small>Load the current S&amp;P SmallCap 600 holdings below, paste at least 10 symbols, or leave blank to use the configured live-scan universe.</small></label>
             <div class="backtest-actions">
               <select id="universeIndex" class="button secondary" aria-label="Index to load">
@@ -255,6 +255,6 @@
     </dialog>
 
     <div id="toast" class="toast hidden" role="status"></div>
-    <script src="/static/app.js?v=1.2.7.1" defer></script>
+    <script src="/static/app.js?v=1.2.7.2" defer></script>
   </body>
 </html>
