@@ -1,0 +1,65 @@
+{
+  "last_execution_date": null,
+  "pending_entries": {},
+  "pending_exit_intents": {
+    "ATI": {
+      "entry_reference": "HDR-2026-07-28",
+      "last_attempt_at": null,
+      "quantity": 120,
+      "submit_at": "2026-08-05T12:00:00+00:00",
+      "symbol": "ATI"
+    },
+    "DAR": {
+      "entry_reference": "HDR-2026-07-28",
+      "last_attempt_at": null,
+      "quantity": 82,
+      "submit_at": "2026-08-05T12:00:00+00:00",
+      "symbol": "DAR"
+    },
+    "DY": {
+      "entry_reference": "HDR-2026-07-28",
+      "last_attempt_at": null,
+      "quantity": 55,
+      "submit_at": "2026-08-05T12:00:00+00:00",
+      "symbol": "DY"
+    },
+    "FLR": {
+      "entry_reference": "HDR-2026-07-28",
+      "last_attempt_at": null,
+      "quantity": 456,
+      "submit_at": "2026-08-05T12:00:00+00:00",
+      "symbol": "FLR"
+    },
+    "MP": {
+      "entry_reference": "HDR-2026-07-28",
+      "last_attempt_at": null,
+      "quantity": 448,
+      "submit_at": "2026-08-05T12:00:00+00:00",
+      "symbol": "MP"
+    },
+    "MUR": {
+      "entry_reference": "HDR-2026-07-28",
+      "last_attempt_at": null,
+      "quantity": 413,
+      "submit_at": "2026-08-05T12:00:00+00:00",
+      "symbol": "MUR"
+    },
+    "RH": {
+      "entry_reference": "HDR-2026-07-28",
+      "last_attempt_at": null,
+      "quantity": 27,
+      "submit_at": "2026-08-05T12:00:00+00:00",
+      "symbol": "RH"
+    },
+    "SPXC": {
+      "entry_reference": "HDR-2026-07-28",
+      "last_attempt_at": null,
+      "quantity": 8,
+      "submit_at": "2026-08-05T12:00:00+00:00",
+      "symbol": "SPXC"
+    }
+  },
+  "pending_exit_order_ids": [
+    6
+  ]
+}

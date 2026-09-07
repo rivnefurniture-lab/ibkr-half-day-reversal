@@ -1,0 +1,410 @@
+{
+  "event": "scan_complete",
+  "scanned_at": "2026-07-28T22:01:43.349328",
+  "universe_size": 400,
+  "valid_quotes": 400,
+  "coverage": 1.0,
+  "selected_count": 40,
+  "selected": [
+    {
+      "rank": 1,
+      "symbol": "AMKR",
+      "open_price": 51.87,
+      "current_price": 45.34,
+      "return_pct": -12.589165220744158,
+      "selected": true,
+      "target_quantity": 55,
+      "target_value": 2493.7000000000003
+    },
+    {
+      "rank": 2,
+      "symbol": "STRL",
+      "open_price": 600.42,
+      "current_price": 533.1,
+      "return_pct": -11.212151493954226,
+      "selected": true,
+      "target_quantity": 4,
+      "target_value": 2132.4
+    },
+    {
+      "rank": 3,
+      "symbol": "IESC",
+      "open_price": 586.99,
+      "current_price": 538.7,
+      "return_pct": -8.226715957682407,
+      "selected": true,
+      "target_quantity": 4,
+      "target_value": 2154.8
+    },
+    {
+      "rank": 4,
+      "symbol": "TTMI",
+      "open_price": 116.76,
+      "current_price": 107.77,
+      "return_pct": -7.699554642000694,
+      "selected": true,
+      "target_quantity": 23,
+      "target_value": 2478.71
+    },
+    {
+      "rank": 5,
+      "symbol": "OSK",
+      "open_price": 160.0,
+      "current_price": 149.93,
+      "return_pct": -6.2937499999999975,
+      "selected": true,
+      "target_quantity": 16,
+      "target_value": 2398.88
+    },
+    {
+      "rank": 6,
+      "symbol": "SANM",
+      "open_price": 180.62,
+      "current_price": 170.3,
+      "return_pct": -5.7136529730926755,
+      "selected": true,
+      "target_quantity": 14,
+      "target_value": 2384.2000000000003
+    },
+    {
+      "rank": 7,
+      "symbol": "PII",
+      "open_price": 76.58,
+      "current_price": 72.25,
+      "return_pct": -5.654217811439011,
+      "selected": true,
+      "target_quantity": 34,
+      "target_value": 2456.5
+    },
+    {
+      "rank": 8,
+      "symbol": "NXT",
+      "open_price": 100.26,
+      "current_price": 95.17,
+      "return_pct": -5.076800319170161,
+      "selected": true,
+      "target_quantity": 26,
+      "target_value": 2474.42
+    },
+    {
+      "rank": 9,
+      "symbol": "ONTO",
+      "open_price": 250.0,
+      "current_price": 237.91,
+      "return_pct": -4.835999999999996,
+      "selected": true,
+      "target_quantity": 10,
+      "target_value": 2379.1
+    },
+    {
+      "rank": 10,
+      "symbol": "RMBS",
+      "open_price": 91.12,
+      "current_price": 86.74,
+      "return_pct": -4.806848112379292,
+      "selected": true,
+      "target_quantity": 28,
+      "target_value": 2428.72
+    },
+    {
+      "rank": 11,
+      "symbol": "MKSI",
+      "open_price": 296.31,
+      "current_price": 282.11,
+      "return_pct": -4.792278357125978,
+      "selected": true,
+      "target_quantity": 8,
+      "target_value": 2256.88
+    },
+    {
+      "rank": 12,
+      "symbol": "MTZ",
+      "open_price": 326.54,
+      "current_price": 311.13,
+      "return_pct": -4.719176823666327,
+      "selected": true,
+      "target_quantity": 8,
+      "target_value": 2489.04
+    },
+    {
+      "rank": 13,
+      "symbol": "IPGP",
+      "open_price": 86.84,
+      "current_price": 82.76,
+      "return_pct": -4.698295716259782,
+      "selected": true,
+      "target_quantity": 30,
+      "target_value": 2482.8
+    },
+    {
+      "rank": 14,
+      "symbol": "SPXC",
+      "open_price": 214.8,
+      "current_price": 205.37,
+      "return_pct": -4.390130353817511,
+      "selected": true,
+      "target_quantity": 12,
+      "target_value": 2464.44
+    },
+    {
+      "rank": 15,
+      "symbol": "TLN",
+      "open_price": 336.01,
+      "current_price": 321.68,
+      "return_pct": -4.264754025177819,
+      "selected": true,
+      "target_quantity": 7,
+      "target_value": 2251.76
+    },
+    {
+      "rank": 16,
+      "symbol": "DY",
+      "open_price": 415.0,
+      "current_price": 398.53,
+      "return_pct": -3.9686746987951826,
+      "selected": true,
+      "target_quantity": 6,
+      "target_value": 2391.18
+    },
+    {
+      "rank": 17,
+      "symbol": "AAON",
+      "open_price": 98.08,
+      "current_price": 94.22,
+      "return_pct": -3.935562805872761,
+      "selected": true,
+      "target_quantity": 26,
+      "target_value": 2449.72
+    },
+    {
+      "rank": 18,
+      "symbol": "DOCN",
+      "open_price": 115.99,
+      "current_price": 111.75,
+      "return_pct": -3.6554875420294786,
+      "selected": true,
+      "target_quantity": 22,
+      "target_value": 2458.5
+    },
+    {
+      "rank": 19,
+      "symbol": "VIAV",
+      "open_price": 36.52,
+      "current_price": 35.2,
+      "return_pct": -3.6144578313253017,
+      "selected": true,
+      "target_quantity": 71,
+      "target_value": 2499.2000000000003
+    },
+    {
+      "rank": 20,
+      "symbol": "RRX",
+      "open_price": 208.18,
+      "current_price": 200.75,
+      "return_pct": -3.5690268037275485,
+      "selected": true,
+      "target_quantity": 12,
+      "target_value": 2409.0
+    },
+    {
+      "rank": 21,
+      "symbol": "FLR",
+      "open_price": 50.77,
+      "current_price": 48.97,
+      "return_pct": -3.5454008272602033,
+      "selected": true,
+      "target_quantity": 51,
+      "target_value": 2497.47
+    },
+    {
+      "rank": 22,
+      "symbol": "ATI",
+      "open_price": 190.99,
+      "current_price": 184.29,
+      "return_pct": -3.508037070003678,
+      "selected": true,
+      "target_quantity": 13,
+      "target_value": 2395.77
+    },
+    {
+      "rank": 23,
+      "symbol": "PBF",
+      "open_price": 63.55,
+      "current_price": 61.34,
+      "return_pct": -3.4775767112509737,
+      "selected": true,
+      "target_quantity": 40,
+      "target_value": 2453.6000000000004
+    },
+    {
+      "rank": 24,
+      "symbol": "SOLS",
+      "open_price": 60.04,
+      "current_price": 57.98,
+      "return_pct": -3.431045969353763,
+      "selected": true,
+      "target_quantity": 43,
+      "target_value": 2493.14
+    },
+    {
+      "rank": 25,
+      "symbol": "MUR",
+      "open_price": 37.9,
+      "current_price": 36.6,
+      "return_pct": -3.430079155672816,
+      "selected": true,
+      "target_quantity": 68,
+      "target_value": 2488.8
+    },
+    {
+      "rank": 26,
+      "symbol": "ARWR",
+      "open_price": 86.31,
+      "current_price": 83.385,
+      "return_pct": -3.3889468196037553,
+      "selected": true,
+      "target_quantity": 29,
+      "target_value": 2418.165
+    },
+    {
+      "rank": 27,
+      "symbol": "BWXT",
+      "open_price": 173.91,
+      "current_price": 168.1,
+      "return_pct": -3.340808464148126,
+      "selected": true,
+      "target_quantity": 14,
+      "target_value": 2353.4
+    },
+    {
+      "rank": 28,
+      "symbol": "AEIS",
+      "open_price": 280.57,
+      "current_price": 271.35,
+      "return_pct": -3.2861674448444123,
+      "selected": true,
+      "target_quantity": 9,
+      "target_value": 2442.15
+    },
+    {
+      "rank": 29,
+      "symbol": "VAL",
+      "open_price": 77.29,
+      "current_price": 74.79,
+      "return_pct": -3.2345710958726848,
+      "selected": true,
+      "target_quantity": 33,
+      "target_value": 2468.07
+    },
+    {
+      "rank": 30,
+      "symbol": "MTDR",
+      "open_price": 47.76,
+      "current_price": 46.31,
+      "return_pct": -3.0360134003350026,
+      "selected": true,
+      "target_quantity": 53,
+      "target_value": 2454.4300000000003
+    },
+    {
+      "rank": 31,
+      "symbol": "SMTC",
+      "open_price": 113.73,
+      "current_price": 110.33,
+      "return_pct": -2.9895366218236186,
+      "selected": true,
+      "target_quantity": 22,
+      "target_value": 2427.2599999999998
+    },
+    {
+      "rank": 32,
+      "symbol": "VICR",
+      "open_price": 195.92,
+      "current_price": 190.19,
+      "return_pct": -2.924663127807259,
+      "selected": true,
+      "target_quantity": 13,
+      "target_value": 2472.47
+    },
+    {
+      "rank": 33,
+      "symbol": "CRS",
+      "open_price": 570.0,
+      "current_price": 553.35,
+      "return_pct": -2.9210526315789465,
+      "selected": true,
+      "target_quantity": 4,
+      "target_value": 2213.4
+    },
+    {
+      "rank": 34,
+      "symbol": "NOV",
+      "open_price": 20.49,
+      "current_price": 19.9,
+      "return_pct": -2.87945339189849,
+      "selected": true,
+      "target_quantity": 125,
+      "target_value": 2487.5
+    },
+    {
+      "rank": 35,
+      "symbol": "OVV",
+      "open_price": 60.43,
+      "current_price": 58.73,
+      "return_pct": -2.8131722654310853,
+      "selected": true,
+      "target_quantity": 42,
+      "target_value": 2466.66
+    },
+    {
+      "rank": 36,
+      "symbol": "MEDP",
+      "open_price": 589.74,
+      "current_price": 573.2,
+      "return_pct": -2.804625767287272,
+      "selected": true,
+      "target_quantity": 4,
+      "target_value": 2292.8
+    },
+    {
+      "rank": 37,
+      "symbol": "RH",
+      "open_price": 182.64,
+      "current_price": 177.55,
+      "return_pct": -2.786903197547075,
+      "selected": true,
+      "target_quantity": 14,
+      "target_value": 2485.7000000000003
+    },
+    {
+      "rank": 38,
+      "symbol": "CHRD",
+      "open_price": 132.72,
+      "current_price": 129.03,
+      "return_pct": -2.7802893309222365,
+      "selected": true,
+      "target_quantity": 19,
+      "target_value": 2451.57
+    },
+    {
+      "rank": 39,
+      "symbol": "ROIV",
+      "open_price": 34.7,
+      "current_price": 33.77,
+      "return_pct": -2.6801152737752187,
+      "selected": true,
+      "target_quantity": 74,
+      "target_value": 2498.98
+    },
+    {
+      "rank": 40,
+      "symbol": "NVT",
+      "open_price": 144.4,
+      "current_price": 140.56,
+      "return_pct": -2.659279778393353,
+      "selected": true,
+      "target_quantity": 17,
+      "target_value": 2389.52
+    }
+  ]
+}

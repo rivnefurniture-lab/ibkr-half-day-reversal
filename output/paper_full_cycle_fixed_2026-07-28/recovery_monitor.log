@@ -1,0 +1,2011 @@
+{"event": "recovery_scheduled", "submit_at_et": "2026-07-31T08:00:00-04:00", "submit_at_utc": "2026-07-31T12:00:00+00:00", "symbols": ["AAON", "ATI", "DAR", "DY", "FLR", "MP", "MUR", "RH", "SPXC"], "time_utc": "2026-07-30T14:00:34.069228+00:00"}
+{"account": "DUR357918", "event": "connected", "time_utc": "2026-07-30T14:00:34.488154+00:00"}
+{"account": "DUR357918", "event": "state", "exit_intents_count": 9, "final_recovery_orders_count": 0, "observed_recovery_orders_count": 0, "open_exit_orders_count": 0, "pending_exit_ids_count": 0, "strategy_positions": {"AAON": 237, "ATI": 120, "DAR": 82, "DY": 55, "FLR": 456, "MP": 448, "MUR": 413, "RH": 27, "SPXC": 8}, "time_utc": "2026-07-30T14:00:34.488237+00:00"}
+Error 1100, reqId -1: Connectivity between IBKR and Trader Workstation has been lost.
+Error 1102, reqId -1: Connectivity between IBKR and Trader Workstation has been restored - data maintained. The following farms are connected: . The following farms are not connected: usfarm.nj; usfuture; eufarm; cashfarm; usfarm; euhmds; fundfarm; ushmds; secdefeu.
+Error 1100, reqId -1: Connectivity between IBKR and Trader Workstation has been lost.
+Error 1102, reqId -1: Connectivity between IBKR and Trader Workstation has been restored - data maintained. All data farms are connected: usfarm.nj; usfuture; eufarm; cashfarm; usfarm; euhmds; fundfarm; ushmds; secdefeu.
+{"event": "recovery_scheduled", "submit_at_et": "2026-07-31T08:00:00-04:00", "submit_at_utc": "2026-07-31T12:00:00+00:00", "symbols": ["AAON", "ATI", "DAR", "DY", "FLR", "MP", "MUR", "RH", "SPXC"], "time_utc": "2026-07-31T08:36:17.190897+00:00"}
+{"account": "DUR357918", "event": "connected", "time_utc": "2026-07-31T08:36:17.625627+00:00"}
+{"account": "DUR357918", "event": "state", "exit_intents_count": 9, "final_recovery_orders_count": 0, "observed_recovery_orders_count": 0, "open_exit_orders_count": 0, "pending_exit_ids_count": 0, "strategy_positions": {"AAON": 237, "ATI": 120, "DAR": 82, "DY": 55, "FLR": 456, "MP": 448, "MUR": 413, "RH": 27, "SPXC": 8}, "time_utc": "2026-07-31T08:36:17.625677+00:00"}
+Error 1100, reqId -1: Connectivity between IBKR and Trader Workstation has been lost.
+Error 1100, reqId -1: Connectivity between IBKR and Trader Workstation has been lost.
+Error 1100, reqId -1: Connectivity between IBKR and Trader Workstation has been lost.
+Error 1102, reqId -1: Connectivity between IBKR and Trader Workstation has been restored - data maintained. All data farms are connected: usfuture; eufarm; cashfarm; usfarm; euhmds; fundfarm; ushmds; secdefeu.
+Error 1100, reqId -1: Connectivity between IBKR and Trader Workstation has been lost.
+Error 1102, reqId -1: Connectivity between IBKR and Trader Workstation has been restored - data maintained. All data farms are connected: usfuture; eufarm; cashfarm; usfarm; euhmds; fundfarm; ushmds; secdefeu.
+{"account": "DUR357918", "event": "state", "exit_intents_count": 8, "final_recovery_orders_count": 0, "observed_recovery_orders_count": 1, "open_exit_orders_count": 1, "pending_exit_ids_count": 1, "strategy_positions": {"AAON": 237, "ATI": 120, "DAR": 82, "DY": 55, "FLR": 456, "MP": 448, "MUR": 413, "RH": 27, "SPXC": 8}, "time_utc": "2026-07-31T12:00:15.173971+00:00"}
+{"event": "recovery_scheduled", "submit_at_et": "2026-08-04T08:00:00-04:00", "submit_at_utc": "2026-08-04T12:00:00+00:00", "symbols": ["ATI", "DAR", "DY", "FLR", "MP", "MUR", "RH", "SPXC"], "time_utc": "2026-08-04T11:52:48.099682+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:52:48.100346+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:53:03.103401+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:53:18.121317+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:53:33.128392+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:53:48.131350+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:54:03.133332+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:54:18.136816+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:54:33.138660+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:54:48.140470+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:55:03.143880+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:55:18.146430+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:55:33.149260+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:55:48.151620+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:56:03.155606+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:56:18.161107+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:56:33.164122+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:56:48.167196+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:57:03.171688+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:57:18.175924+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:57:33.179713+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:57:48.181921+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:58:03.183609+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:58:18.186082+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:58:33.188723+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:58:48.191257+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:59:03.195108+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:59:18.197033+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:59:33.200648+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T11:59:48.203396+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:00:03.205286+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:00:18.210696+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:00:33.213572+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:00:48.214994+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:01:03.217213+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:01:18.219289+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:01:33.222419+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:01:48.224724+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:02:03.228412+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:02:18.234371+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:02:33.236644+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:02:48.238583+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:03:03.241150+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:03:18.244616+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:03:33.247914+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:03:48.254030+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:04:03.256380+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:04:18.260608+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:04:33.261818+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:04:48.264426+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:05:03.266080+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:05:18.268311+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:05:33.272936+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:05:48.274955+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:06:03.278255+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:06:18.280840+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:06:33.284342+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:06:48.286597+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:07:03.295532+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:07:18.297039+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:07:33.300447+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:07:48.302740+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:08:03.304768+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:08:18.306975+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:08:33.311120+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:08:48.312721+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:09:03.315302+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:09:18.318130+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:09:33.320269+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:09:48.326210+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:10:03.329113+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:10:18.330945+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:10:33.333562+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:10:48.337140+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:11:03.340153+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:11:18.343828+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:11:33.349754+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:11:48.353234+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:12:03.356379+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:12:18.358122+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:12:33.360821+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:12:48.363997+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:13:03.367316+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:13:18.369138+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:13:33.372735+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:13:48.374681+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:14:03.376990+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:14:18.379598+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:14:33.384114+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:14:48.387153+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:15:03.389381+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:15:18.392352+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:15:33.395540+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:15:48.398236+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:16:03.400752+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:16:18.404422+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:16:33.408276+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:16:48.410559+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:17:03.413018+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:17:18.414602+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:17:33.417076+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:17:48.420493+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:18:03.424903+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:18:18.428623+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:18:33.432268+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:18:48.436792+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:19:03.440302+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:19:18.444501+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:19:33.447165+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:19:48.451003+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:20:03.454607+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:20:18.458966+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:20:33.463336+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:20:48.466365+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:21:03.470797+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:21:18.472874+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:21:33.477591+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:21:48.480471+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:22:03.483514+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:22:18.490936+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:22:33.493549+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:22:48.496034+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:23:03.501182+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:23:18.504553+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:23:33.507632+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:23:48.512270+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:24:03.516209+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:24:18.517503+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:24:33.520109+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:24:48.522631+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:25:03.525162+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:25:18.528280+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:25:33.532408+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:25:48.536087+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:26:03.538223+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:26:18.539251+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:26:33.541422+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:26:48.543210+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:27:03.545890+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:27:18.548712+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:27:33.551406+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:27:48.554299+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:28:03.556605+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:28:18.558785+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:28:33.564405+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:28:48.567712+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:29:03.579512+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:29:18.581503+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:29:33.596574+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:29:48.599912+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:30:03.602615+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:30:18.606145+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:30:33.608938+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:30:48.611684+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:31:03.613924+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:31:18.616659+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:31:33.618354+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:31:48.621163+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:32:03.624002+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:32:18.627063+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:32:33.629600+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:32:48.631373+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:33:03.634999+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:33:18.637965+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:33:33.641057+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:33:48.645059+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:34:03.647997+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:34:18.651777+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:34:33.653551+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:34:48.656215+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:35:03.658751+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:35:18.661567+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:35:33.664913+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:35:48.667217+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:36:03.669315+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:36:18.671868+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:36:33.673652+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:36:48.678722+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:37:03.681019+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:37:18.684100+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:37:33.688017+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:37:48.689616+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:38:03.692306+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:38:18.694611+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:38:33.699002+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:38:48.700689+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:39:03.704264+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:39:18.707309+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:39:33.710520+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:39:48.714947+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:40:03.716617+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:40:18.720006+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:40:33.722093+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:40:48.723758+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:41:03.725547+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:41:18.728654+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:41:33.730960+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:41:48.732842+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:42:03.735261+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:42:18.737106+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:42:33.742781+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:42:48.746816+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:43:03.749971+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:43:18.752392+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:43:33.756426+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:43:48.758890+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:44:03.763107+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:44:18.769211+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:44:33.772266+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:44:48.775604+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:45:03.781288+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:45:18.785723+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:45:33.787227+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:45:48.789821+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:46:03.796518+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:46:18.800383+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:46:33.803925+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:46:48.807183+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:47:03.810736+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:47:18.814156+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:47:33.820167+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:47:48.828253+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:48:03.833174+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:48:18.836407+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:48:33.839713+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:48:48.841979+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:49:03.847461+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:49:18.849599+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:49:33.851423+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:49:48.854461+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:50:03.857653+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:50:18.861160+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:50:33.864822+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:50:48.865646+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:51:03.867444+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:51:18.870028+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:51:33.873025+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:51:48.874810+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:52:03.876509+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:52:18.878843+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:52:33.881469+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:52:48.884388+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:53:03.887580+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:53:18.889240+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:53:33.892393+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:53:48.896137+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:54:03.898945+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:54:18.900963+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:54:33.903867+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:54:48.907736+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:55:03.914359+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:55:18.919289+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:55:33.922310+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:55:48.927022+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:56:03.929450+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:56:18.931159+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:56:33.934127+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:56:48.935742+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:57:03.938477+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:57:18.940065+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:57:33.943092+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:57:48.947594+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:58:03.949232+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:58:18.951741+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:58:33.954985+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:58:48.957950+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:59:03.960156+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:59:18.962522+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:59:33.964658+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T12:59:48.967032+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:00:03.970926+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:00:18.973214+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:00:33.976571+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:00:48.978745+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:01:03.987001+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:01:18.993946+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:01:33.999231+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:01:49.002993+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:02:04.007726+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:02:19.010985+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:02:34.013216+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:02:49.017527+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:03:04.021990+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:03:19.027245+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:03:34.030489+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:03:49.036283+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:04:04.039499+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:04:19.042713+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:04:34.046099+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:04:49.048304+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:05:04.055525+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:05:19.061855+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:05:34.068465+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:05:49.074298+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:06:04.078488+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:06:19.082547+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:06:34.086707+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:06:49.098994+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:07:04.102433+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:07:19.107869+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:07:34.110157+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:07:49.113779+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:08:04.117321+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:08:19.120159+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:08:34.123374+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:08:49.128620+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:09:04.133031+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:09:19.136379+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:09:34.139690+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:09:49.146659+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:10:04.148478+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:10:19.150595+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:10:34.152131+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:10:49.155621+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:11:04.157916+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:11:19.161372+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:11:34.163089+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:11:49.164970+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:12:04.167075+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:12:19.169121+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:12:34.170357+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:12:49.173625+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:13:04.175825+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:13:19.178168+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:13:34.181379+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:13:49.184344+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:14:04.187589+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:14:19.189291+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:14:34.191691+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:14:49.193332+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:15:04.195558+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:15:19.197988+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:15:34.201052+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:15:49.202299+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-04T13:16:04.204611+00:00"}
+{"event": "recovery_scheduled", "submit_at_et": "2026-08-05T08:00:00-04:00", "submit_at_utc": "2026-08-05T12:00:00+00:00", "symbols": ["ATI", "DAR", "DY", "FLR", "MP", "MUR", "RH", "SPXC"], "time_utc": "2026-08-05T11:51:52.184457+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:51:52.185801+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:52:07.188609+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:52:22.191736+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:52:37.195611+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:52:52.201659+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:53:07.203467+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:53:22.205397+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:53:37.208095+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:53:52.211284+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:54:07.214671+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:54:22.218449+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:54:37.220740+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:54:52.223343+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:55:07.229674+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:55:22.235630+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:55:37.238200+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:55:52.244300+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:56:07.248823+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:56:22.252737+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:56:37.255283+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:56:52.259052+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:57:07.266854+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:57:22.272580+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:57:37.277393+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:57:52.279989+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:58:07.284234+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:58:22.287263+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:58:37.292183+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:58:52.295368+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:59:07.298410+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:59:22.300417+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:59:37.302969+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T11:59:52.306581+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:00:07.309315+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:00:22.315633+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:00:37.318486+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:00:52.321673+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:01:07.327507+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:01:22.329103+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:01:37.331730+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:01:52.334207+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:02:07.343883+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:02:22.345503+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:02:37.347033+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:02:52.352685+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:03:07.354171+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:03:22.355596+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:03:37.359696+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:03:52.363781+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:04:07.367548+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:04:22.369284+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:04:37.370922+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:04:52.373228+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:05:07.378723+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:05:22.381739+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:05:37.386922+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:05:52.391595+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:06:07.394981+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:06:22.401710+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:06:37.404705+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:06:52.409519+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:07:07.413625+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:07:22.416434+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:07:37.419256+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:07:52.421615+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:08:07.423617+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:08:22.425877+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:08:37.428616+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:08:52.433888+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:09:07.443737+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:09:22.448689+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:09:37.452255+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:09:52.455719+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:10:07.463263+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:10:22.470756+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:10:37.473918+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:10:52.477656+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:11:07.483763+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:11:22.487258+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:11:37.489626+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:11:52.495308+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:12:07.498681+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:12:22.505299+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:12:37.507200+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:12:52.509635+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:13:07.513314+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:13:22.517834+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:13:37.524402+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:13:52.527328+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:14:07.532072+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:14:22.537717+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:14:37.540428+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:14:52.544041+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:15:07.548079+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:15:22.552571+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:15:37.605505+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:15:52.613247+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:16:07.618483+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:16:22.622355+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:16:37.626763+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:16:52.629940+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:17:07.633090+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:17:22.638557+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:17:37.641237+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:17:52.644066+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:18:07.647783+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:18:22.654889+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:18:37.658160+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:18:52.662769+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:19:07.669271+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:19:22.670846+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:19:37.676781+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:19:52.679828+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:20:07.682751+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:20:22.685743+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:20:37.691102+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:20:52.696219+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:21:07.703440+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:21:22.717158+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:21:37.720190+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:21:52.722282+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:22:07.725459+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:22:22.728833+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:22:37.732597+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:22:52.736093+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:23:07.739232+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:23:22.741710+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:23:37.746102+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:23:52.748238+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:24:07.752926+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:24:22.755238+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:24:37.758915+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:24:52.759904+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:25:07.761605+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:25:22.762658+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:25:37.766867+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:25:52.769228+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:26:07.771429+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:26:22.773041+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:26:37.780310+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:26:52.782532+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:27:07.785897+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:27:22.787992+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:27:37.791444+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:27:52.793803+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:28:07.797082+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:28:22.799628+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:28:37.802256+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:28:52.804626+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:29:07.809220+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:29:22.816054+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:29:37.826169+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:29:52.829341+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:30:07.833549+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:30:22.838992+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:30:37.842545+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:30:52.844910+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:31:07.847958+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:31:22.849981+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:31:37.851695+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:31:52.856934+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:32:07.897783+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:32:23.983806+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:32:39.002732+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:32:54.008492+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:33:09.024213+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:33:24.165879+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:33:39.174782+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:33:54.192988+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:34:09.198395+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:34:24.215389+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:34:39.239682+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:34:54.451631+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:35:09.456873+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:35:24.459833+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:35:39.462612+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:35:54.467322+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:36:09.468198+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:36:24.470864+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:36:39.473988+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:36:54.478079+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:37:09.482468+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:37:24.486905+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:37:39.491041+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:37:54.492332+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:38:09.495418+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:38:24.498228+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:38:39.500938+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:38:54.512696+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:39:09.516278+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:39:24.519224+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:39:39.523321+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:39:54.529568+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:40:09.531473+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:40:24.538272+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:40:39.540974+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:40:54.546782+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:41:09.550883+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:41:24.562207+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:41:39.566744+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:41:54.570047+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:42:09.572586+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:42:24.576143+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:42:39.578939+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:42:54.582156+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:43:09.584936+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:43:24.587874+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:43:39.591015+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:43:54.595288+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:44:09.597246+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:44:24.600471+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:44:39.604404+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:44:54.608191+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:45:09.611960+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:45:24.615536+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:45:39.620694+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:45:54.624385+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:46:09.628014+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:46:24.633297+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:46:39.637141+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:46:54.641773+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:47:09.646803+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:47:24.650691+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:47:39.653414+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:47:54.661573+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:48:09.664253+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:48:24.667433+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:48:39.670033+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:48:54.672982+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:49:09.674929+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:49:24.679211+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:49:39.684643+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:49:54.688676+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:50:09.692550+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:50:24.695548+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:50:39.697865+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:50:54.701426+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:51:09.702927+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:51:24.704534+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:51:39.707864+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:51:54.711518+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:52:09.714097+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:52:24.718161+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:52:39.721046+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:52:54.724465+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:53:09.727398+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:53:24.732887+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:53:39.736689+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:53:54.737890+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:54:09.740244+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:54:24.744326+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:54:39.748645+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:54:54.751794+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:55:09.753964+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:55:24.755789+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:55:39.758951+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:55:54.761968+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:56:09.768098+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:56:24.770283+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:56:39.772532+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:56:54.776024+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:57:09.783610+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:57:24.785718+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:57:39.787947+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:57:54.788730+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:58:09.791074+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:58:24.792593+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:58:39.794946+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:58:54.797447+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:59:09.799932+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:59:24.801523+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:59:39.805242+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T12:59:54.807933+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:00:09.809645+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:00:24.812502+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:00:39.819163+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:00:54.822372+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:01:09.825167+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:01:24.833144+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:01:39.835678+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:01:54.840153+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:02:09.843893+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:02:24.847263+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:02:39.849747+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:02:54.856268+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:03:09.859831+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:03:24.865848+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:03:39.868492+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:03:54.872159+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:04:09.876963+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:04:24.879618+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:04:39.883244+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:04:54.886694+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:05:09.889513+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:05:24.891390+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:05:39.893232+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:05:54.896635+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:06:09.899529+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:06:24.901443+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:06:39.904036+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:06:54.906627+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:07:09.908795+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:07:24.911825+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:07:39.913938+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:07:54.916310+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:08:09.920500+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:08:24.923467+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:08:39.926552+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:08:54.929251+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:09:09.932043+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:09:24.935100+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:09:39.940589+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:09:54.942434+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:10:09.946149+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:10:24.948990+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:10:39.950737+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:10:54.952998+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:11:09.956663+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:11:24.959396+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:11:39.961172+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:11:54.964042+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:12:09.967205+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:12:24.970562+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:12:39.971965+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:12:54.973007+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:13:09.975718+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:13:24.981015+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:13:39.982826+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:13:54.984405+00:00"}
+API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+Make sure API port on TWS/IBG is open
+{"error": "[Errno 61] Connect call failed ('127.0.0.1', 7497)", "event": "connection_failed", "time_utc": "2026-08-05T13:14:09.987038+00:00"}

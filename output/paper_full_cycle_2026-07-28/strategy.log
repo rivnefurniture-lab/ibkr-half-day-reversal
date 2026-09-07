@@ -1,0 +1,82 @@
+2026-07-28 22:02:53,211 INFO Loaded 400 mid-cap symbols from iShares IJH (tracks S&P MidCap 400)
+2026-07-28 22:02:53,214 INFO Settings saved
+2026-07-28 22:02:53,214 INFO Dashboard started in safe mode. Connect to IBKR when ready.
+2026-07-28 22:02:53,214 INFO Connecting to IBKR at 127.0.0.1:7497...
+2026-07-28 22:02:53,636 INFO Connected to Paper account ••••7918
+2026-07-28 22:02:53,637 INFO Paper execution armed until 04:45 PM ET
+2026-07-28 22:42:00,757 INFO Starting scheduled scan across 400 symbols
+2026-07-28 22:42:33,292 INFO Scan complete: 400/400 valid quotes; 40 stocks selected
+2026-07-28 22:42:43,522 INFO Submitted 40 MOC buy orders
+2026-07-28 22:59:30,908 INFO IPGP: 267 shares filled; next-open sell queued
+2026-07-28 22:59:31,065 INFO OSK: 150 shares filled; next-open sell queued
+2026-07-28 22:59:31,438 INFO MEDP: 39 shares filled; next-open sell queued
+2026-07-28 22:59:31,537 INFO SANM: 130 shares filled; next-open sell queued
+2026-07-28 22:59:31,648 INFO IESC: 41 shares filled; next-open sell queued
+2026-07-28 22:59:31,894 INFO RMBS: 253 shares filled; next-open sell queued
+2026-07-28 22:59:32,226 INFO NXT: 234 shares filled; next-open sell queued
+2026-07-28 22:59:32,234 INFO SPXC: 108 shares filled; next-open sell queued
+2026-07-28 22:59:32,235 INFO AAON: 237 shares filled; next-open sell queued
+2026-07-28 22:59:32,402 INFO MTDR: 487 shares filled; next-open sell queued
+2026-07-28 22:59:32,440 WARNING MEDP next-open exit finished as Cancelled
+2026-07-28 22:59:32,552 INFO OVV: 381 shares filled; next-open sell queued
+2026-07-28 22:59:32,605 INFO STRL: 41 shares filled; next-open sell queued
+2026-07-28 22:59:32,650 INFO TLN: 69 shares filled; next-open sell queued
+2026-07-28 22:59:32,650 WARNING IESC next-open exit finished as Cancelled
+2026-07-28 22:59:32,653 INFO CVLT: 183 shares filled; next-open sell queued
+2026-07-28 22:59:32,697 INFO CHRD: 174 shares filled; next-open sell queued
+2026-07-28 22:59:32,738 INFO TREX: 513 shares filled; next-open sell queued
+2026-07-28 22:59:32,896 WARNING RMBS next-open exit finished as Cancelled
+2026-07-28 22:59:32,912 WARNING IPGP next-open exit finished as Cancelled
+2026-07-28 22:59:33,230 WARNING NXT next-open exit finished as Cancelled
+2026-07-28 22:59:33,237 WARNING AAON next-open exit finished as Cancelled
+2026-07-28 22:59:33,404 WARNING MTDR next-open exit finished as Cancelled
+2026-07-28 22:59:33,430 INFO CRS: 40 shares filled; next-open sell queued
+2026-07-28 22:59:33,514 INFO RH: 127 shares filled; next-open sell queued
+2026-07-28 22:59:33,514 INFO MUR: 613 shares filled; next-open sell queued
+2026-07-28 22:59:33,538 WARNING SANM next-open exit finished as Cancelled
+2026-07-28 22:59:33,607 WARNING STRL next-open exit finished as Cancelled
+2026-07-28 22:59:33,653 WARNING TLN next-open exit finished as Cancelled
+2026-07-28 22:59:33,700 WARNING CHRD next-open exit finished as Cancelled
+2026-07-28 22:59:33,741 WARNING TREX next-open exit finished as Cancelled
+2026-07-28 22:59:34,068 INFO MUSA: 37 shares filled; next-open sell queued
+2026-07-28 22:59:34,181 INFO MKSI: 78 shares filled; next-open sell queued
+2026-07-28 22:59:34,239 WARNING SPXC next-open exit finished as Cancelled
+2026-07-28 22:59:34,432 WARNING CRS next-open exit finished as Cancelled
+2026-07-28 22:59:34,516 WARNING RH next-open exit finished as Cancelled
+2026-07-28 22:59:34,517 WARNING MUR next-open exit finished as Cancelled
+2026-07-28 22:59:34,568 WARNING OVV next-open exit finished as Cancelled
+2026-07-28 22:59:35,034 INFO MTZ: 71 shares filled; next-open sell queued
+2026-07-28 22:59:35,069 WARNING MUSA next-open exit finished as Cancelled
+2026-07-28 22:59:35,183 WARNING MKSI next-open exit finished as Cancelled
+2026-07-28 22:59:35,210 INFO MP: 548 shares filled; next-open sell queued
+2026-07-28 22:59:35,656 WARNING CVLT next-open exit finished as Cancelled
+2026-07-28 22:59:36,213 WARNING MP next-open exit finished as Cancelled
+2026-07-28 22:59:37,870 INFO NOV: 1130 shares filled; next-open sell queued
+2026-07-28 22:59:39,873 WARNING NOV next-open exit finished as Cancelled
+2026-07-28 22:59:42,077 WARNING OSK next-open exit finished as Cancelled
+2026-07-28 22:59:42,428 INFO ROIV: 663 shares filled; next-open sell queued
+2026-07-28 22:59:42,665 INFO VAL: 300 shares filled; next-open sell queued
+2026-07-28 22:59:42,725 INFO RRX: 110 shares filled; next-open sell queued
+2026-07-28 22:59:43,048 INFO AMKR: 486 shares filled; next-open sell queued
+2026-07-28 22:59:43,123 INFO ONTO: 93 shares filled; next-open sell queued
+2026-07-28 22:59:43,289 INFO DAR: 382 shares filled; next-open sell queued
+2026-07-28 22:59:43,405 INFO FLR: 456 shares filled; next-open sell queued
+2026-07-28 22:59:43,667 WARNING VAL next-open exit finished as Cancelled
+2026-07-28 22:59:43,710 INFO DY: 55 shares filled; next-open sell queued
+2026-07-28 22:59:43,727 WARNING RRX next-open exit finished as Cancelled
+2026-07-28 22:59:44,041 INFO ATI: 120 shares filled; next-open sell queued
+2026-07-28 22:59:44,049 WARNING AMKR next-open exit finished as Cancelled
+2026-07-28 22:59:44,125 WARNING ONTO next-open exit finished as Cancelled
+2026-07-28 22:59:44,290 WARNING DAR next-open exit finished as Cancelled
+2026-07-28 22:59:44,407 WARNING FLR next-open exit finished as Cancelled
+2026-07-28 22:59:44,712 WARNING DY next-open exit finished as Cancelled
+2026-07-28 22:59:47,044 WARNING MTZ next-open exit finished as Cancelled
+2026-07-28 22:59:51,880 INFO SAM: 122 shares filled; next-open sell queued
+2026-07-28 22:59:53,771 INFO TTMI: 207 shares filled; next-open sell queued
+2026-07-28 22:59:54,444 WARNING ROIV next-open exit finished as Cancelled
+2026-07-28 22:59:56,054 WARNING ATI next-open exit finished as Cancelled
+2026-07-28 23:00:03,691 INFO PR: 1138 shares filled; next-open sell queued
+2026-07-28 23:00:03,692 WARNING PR next-open exit finished as Inactive
+2026-07-28 23:00:07,282 INFO PII: 311 shares filled; next-open sell queued
+2026-07-28 23:00:07,282 WARNING PII next-open exit finished as Inactive
+2026-07-28 23:00:12,905 WARNING SAM next-open exit finished as Cancelled
